@@ -1,0 +1,84 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:nunito;
+    
+  }
+  
+  body {
+    background: #fff;
+  }
+  
+  /* Navbar Base */
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  /* Logo */
+  .logo-text {
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #083CA0;
+  }
+  
+  /* Nav Links */
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links a {
+    font-family: nunito, Roboto, Arial;
+
+    text-decoration: none;
+    color: #515151;
+    font-size: 0.9rem;
+    font-weight: 400;
+    padding: 5px 6px;
+    text-color: #515151;
+    margin-left: 90px;
+    
+  }
+  
+  .nav-links a:hover {
+    color: #083CA0;
+  }
+  
+  /* Login Button */
+  .right-section {
+    display: flex;
+    align-items: center;
+  }
+  
+  .login-btn {
+    padding: 8px 16px;
+    background: transparent;
+    border: 1.5px solid #083CA0;
+    color: #083CA0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  
+  .login-btn:hover {
+    background: #083CA0;
+    color: white;
+  }
+  
+  /* 🔽 Mobile View - hide nav links */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+  }
+  
