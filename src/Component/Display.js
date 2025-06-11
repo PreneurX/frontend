@@ -1,31 +1,22 @@
-import React from 'react'
+import React from 'react';
+import './Display.css'; // Import external CSS
 
 function Display() {
-    const gradientStyle = {
-        background: 'linear-gradient(to right, #0e1010,rgb(13, 94, 201))',
-        WebkitBackgroundClip: 'text',
-        WebkitTextFillColor: 'transparent',
-        fontWeight: 700,
-        fontSize: '4rem',
-        fontFamily: 'DM Sans, sans-serif',
-    };
-    const alpha = {
-        fontFamily: 'DM Sans, sans-serif',
-        fontSize: '4rem',
-
-
-    };
     return (
-        <div>
-            <span style={gradientStyle}>P
-                <span style={{ ...gradientStyle, fontSize: '3rem' }}>RENEUR</span>
-                <span style={alpha}>X- </span>
-
+        <div className="display-container">
+            <span className="gradient-text">
+                P
+                <span className="sub-gradient">RENEUR</span>
+                <span className="alpha-text">X- </span>
             </span>
-            <span style={{ ...gradientStyle, fontSize: '4rem' }}>Talent Clash</span>
-
+            <span className="gradient-text">Talent Clash</span>
+            <br />
+            <pre>
+                <span className="gradient-subtext">VOTE    FOR    THE    BEST</span>
+            </pre>
+            <span className="third-text">DISCOVER AND SUPPORT THE TALENT OF YOUR SCHOOL</span>
         </div>
-    )
-};
+    );
+}
 
-export default Display
+export default Display;

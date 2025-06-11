@@ -62,17 +62,20 @@
   
   .login-btn {
     padding: 8px 16px;
-    background: transparent;
-    border: 1.5px solid #083CA0;
-    color: #083CA0;
+    background: #083CA0;
+    color: white;
     border-radius: 5px;
     cursor: pointer;
     font-weight: 600;
   }
   
   .login-btn:hover {
-    background: #083CA0;
-    color: white;
+    
+
+
+    background: transparent;
+    border: 1.5px solid #083CA0;
+    color: #083CA0;
   }
   
   /* 🔽 Mobile View - hide nav links */

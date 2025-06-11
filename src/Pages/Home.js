@@ -2,7 +2,10 @@ import React from 'react'
 import Navbar from '../Component/Navbar';
 import Curousel from '../Component/Curousel';
 import Display from '../Component/Display';
-
+import Marquee from '../Component/Marquee';
+import TeenDabba from '../Component/TeenDabba';
+import Footer from '../Component/Footer';
+import Rules from '../Component/Rules';
 
 function Home() {
   return (
@@ -10,6 +13,14 @@ function Home() {
         <Navbar />
         <Curousel/>
         <Display/>
+       
+        <TeenDabba/>
+
+         <Marquee/>
+         <Rules/>
+         
+       <Marquee/>
+         <Footer/>
 
         
     </div>
