@@ -17,9 +17,7 @@ function Home() {
         <TeenDabba/>
 
          <Marquee/>
-         <Rules/>
          
-       <Marquee/>
          <Footer/>
 
         
