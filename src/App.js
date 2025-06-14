@@ -2,11 +2,16 @@ import Navbar from './Component/Navbar';
 import Curousel from '../src/Component/Curousel';
 import Home from './Pages/Home';
 import Terms from './Pages/Terms';
+import Login from "./Pages/Login";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 
 
 import './App.css';
+import AboutUs from './Pages/Aboutus';
+import StudentDashboard from './Pages/StudentDashboard';
+import Voting from './Component/Voting';
+import ClassClash from './Pages/ClassClash';
 
 function App() {
   return (
@@ -15,10 +20,20 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/terms" element={<Terms/>}/>
+        <Route path="/about" element={<AboutUs/>}/>
+        <Route path="/dashboard" element={<StudentDashboard/>}/>
+                <Route path="/voting" element={<Voting/>}/>
+                                <Route path="/classclash" element={<ClassClash/>}/>
+
+
+
+
+
         {/* <Route path="/prize-pool" element={<PrizePool />} />
         <Route path="/rules" element={<Rules />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/login" element={<Login />} /> */}
+        <Route path="/contact" element={<Contact />} /> */}
+
+        <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
   );

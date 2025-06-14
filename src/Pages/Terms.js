@@ -1,6 +1,7 @@
 import React from 'react'
 import "./Terms.css"
 import Navbar from '../Component/Navbar'
+import Footer from '../Component/Footer'
 
 function Terms() {
   return (
@@ -94,6 +95,7 @@ function Terms() {
 
    
     </>
+    <Footer/>
     </div>
   )
 }

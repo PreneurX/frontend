@@ -52,6 +52,7 @@
 
     .footer-links a:hover {
       color: #083ca0;
+      text-decoration: none;
     }
 
     .footer-social a img {

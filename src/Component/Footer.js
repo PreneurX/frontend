@@ -16,8 +16,8 @@ function Footer() {
         {/* <Logo/> */}
 
         <div className="footer-links">
-          <a href="/index.html">Home</a>
-          <a href="/aboutus.html">About Us</a>
+          <Link to="/">Home</Link> 
+          <a href="/about">About us</a>
           <a href="/privacy.html">Privacy Policy</a>
           <Link to="/terms">Terms & Condition</Link> 
 

@@ -1,5 +1,7 @@
 import React from 'react';
 import './Navbar.css';
+import { Link } from "react-router-dom";
+import Login from "../Pages/Login";
 
 function Navbar() {
     const gradientStyle = {
@@ -30,7 +32,7 @@ function Navbar() {
             </div>
 
             <nav className="nav-links">
-                <a href="#">Home</a>
+                <a href="/">Home</a>
                 <a href="#">Prize Pool</a>
                 <a href="#">Rules</a>
                 <a href="#">Crown Keepers</a>
@@ -38,7 +40,7 @@ function Navbar() {
             </nav>
 
             <div className="right-section">
-                <button className="login-btn">Login</button>
+                <button><Link className="login-btn" to="/login">Login</Link> </button>
             </div>
             
 

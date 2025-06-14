@@ -40,7 +40,7 @@
   .nav-links a {
     font-family: nunito, Roboto, Arial;
 
-    text-decoration: none;
+    
     color: #515151;
     font-size: 0.9rem;
     font-weight: 400;
@@ -48,16 +48,21 @@
     text-color: #515151;
     margin-left: 90px;
     
+    
   }
   
   .nav-links a:hover {
     color: #083CA0;
+    text-decoration: none;
   }
   
   /* Login Button */
   .right-section {
     display: flex;
     align-items: center;
+  }
+  button{
+    border: none;
   }
   
   .login-btn {
@@ -70,9 +75,6 @@
   }
   
   .login-btn:hover {
-    
-
-
     background: transparent;
     border: 1.5px solid #083CA0;
     color: #083CA0;
