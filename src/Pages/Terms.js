@@ -1,11 +1,11 @@
 import React from 'react'
-import "./Terms.css"
+import "./Terms.css";
 import Navbar from '../Component/Navbar'
 import Footer from '../Component/Footer'
 
 function Terms() {
   return (
-    <div>
+    
         <>
         <Navbar/>
       <header className="header">
@@ -93,10 +93,10 @@ function Terms() {
         </p>
       </div>
 
-   
-    </>
     <Footer/>
-    </div>
+    </>
+   
+    
   )
 }
 

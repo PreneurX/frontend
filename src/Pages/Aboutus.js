@@ -1,5 +1,6 @@
 import React from 'react';
 import Footer from '../Component/Footer';
+import Navbar from '../Component/Navbar';
 
 const AboutUs = () => {
   const styles = {
@@ -96,6 +97,7 @@ const AboutUs = () => {
 
   return (
     <div style={{ background: 'white', margin: 0, padding: 0 }}>
+      <Navbar/>
       <header style={styles.header}>
         <h1 style={styles.h1}>About Us</h1>
       </header>

@@ -18,10 +18,10 @@ function Footer() {
         <div className="footer-links">
           <Link to="/">Home</Link> 
           <a href="/about">About us</a>
-          <a href="/privacy.html">Privacy Policy</a>
+          <a href="/policy">Privacy Policy</a>
           <Link to="/terms">Terms & Condition</Link> 
 
-          <a href="#">Contact Us</a>
+          <a href="/contact">Contact Us</a>
         </div>
 
         <div className="footer-social">

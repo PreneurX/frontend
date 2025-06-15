@@ -12,18 +12,26 @@ import AboutUs from './Pages/Aboutus';
 import StudentDashboard from './Pages/StudentDashboard';
 import Voting from './Component/Voting';
 import ClassClash from './Pages/ClassClash';
+import Privacy from './Pages/Privacy';
+import Rules from './Component/Rules';
 
 function App() {
   return (
     <Router>
-      
+
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/terms" element={<Terms/>}/>
-        <Route path="/about" element={<AboutUs/>}/>
-        <Route path="/dashboard" element={<StudentDashboard/>}/>
-                <Route path="/voting" element={<Voting/>}/>
-                                <Route path="/classclash" element={<ClassClash/>}/>
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/dashboard" element={<StudentDashboard />} />
+        <Route path="/voting" element={<Voting />} />
+        <Route path="/classclash" element={<ClassClash />} />
+        <Route path="/policy" element={<Privacy />} />
+                <Route path="/rules" element={<Rules />} />
+
+
+
+
 
 
 

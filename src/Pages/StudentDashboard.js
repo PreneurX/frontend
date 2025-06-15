@@ -174,6 +174,9 @@ function StudentDashboard() {
 
   return (
     <div style={styles.body}>
+
+
+      <Studentnav/>
       {/* <div style={styles.header}>
         <Logo/>
         <div style={styles.hamburger} onClick={() => setDropdownVisible(!dropdownVisible)}>
@@ -181,34 +184,27 @@ function StudentDashboard() {
           <span style={styles.hamburgerBar}></span>
           <span style={styles.hamburgerBar}></span>
         </div>
-      </div> */}
-      <Studentnav/>
-
-
-      {/* <div style={styles.navbar}>
+      </div>
+      <hr/>
+      <div style={styles.navbar}>
         <div style={styles.navLinks}>
-          {['Clash Class', 'School Showdown', 'PreneurX Talent Clash', 'Rules'].map((link, i) => (
+          {['Clash Class', 'School Showdown', 'PreneurX Talent-Clash', 'Rules'].map((link, i) => (
             <a key={i} href="#" style={styles.navLink}>{link}</a>
           ))}
         </div>
-      </div> */}
+      </div>
+      <hr/> */}
 
-      <div style={styles.dropdown}>
+      {/* <div style={styles.dropdown}>
         <div style={styles.dropdownItem} onClick={() => fileInputRef.current.click()}>📸 Add/Change Profile Picture</div>
         <input type="file" accept="image/*" ref={fileInputRef} style={{ display: 'none' }} onChange={(e) => {
           const file = e.target.files[0];
-          if (file) {
-            const reader = new FileReader();
-            reader.onload = (event) => {
-              setProfilePic(event.target.result);
-            };
-            reader.readAsDataURL(file);
-          }
+          
         }} />
         <div style={styles.dropdownItem}>❓ Need Help</div>
         <div style={styles.dropdownItem}>🔔 Notifications</div>
         <div style={styles.dropdownItem}>🚪 Log Out</div>
-      </div>
+      </div> */}
 
       <div style={styles.container}>
         <div style={styles.profileHeader}>
