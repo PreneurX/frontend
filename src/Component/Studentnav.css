@@ -1,4 +1,4 @@
-.navbar {
+.navbar1 {
   width: 100%;
   background: white;
   overflow-x: auto; /* enable scroll */
@@ -6,11 +6,11 @@
   scrollbar-width: none; /* hide scrollbar in Firefox */
 }
 
-.navbar::-webkit-scrollbar {
+.navbar1::-webkit-scrollbar {
   display: none; /* hide scrollbar in Chrome/Safari */
 }
 
-.nav-links {
+.nav-links1 {
   display: flex;
   flex-direction: row;
   white-space: nowrap; /* prevent wrapping */
@@ -19,7 +19,7 @@
   min-width: max-content;
 }
 
-.nav-links a {
+.nav-links1 a {
   text-decoration: none;
   color: #515151;
   font-size: 18px;
@@ -29,11 +29,11 @@
 }
 
 @media (min-width: 769px) {
-  .navbar {
+  .navbar1 {
     justify-content: center;
   }
 
-  .nav-links {
+  .nav-links1 {
     justify-content: center;
     flex-wrap: wrap; /* allow wrap on large screens if needed */
     width: 100%;
@@ -175,7 +175,7 @@
   cursor: pointer;
 }
 
-    .navbar {
+    .navbar1 {
       width: 100%;
       background: white;
       display: flex;
@@ -184,13 +184,13 @@
       box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
 
-    .nav-links {
+    .nav-links1 {
       display: flex;
       gap: 20px;
       flex-wrap: wrap;
     }
 
-    .nav-links a {
+    .nav-links1 a {
       text-decoration: none;
       color: #515151;
       font-size: 22px;
@@ -200,33 +200,33 @@
       transition: background 0.2s;
     }
 
-    .nav-links a:hover {
+    .nav-links1 a:hover {
       background: #f0f0f0;
     }
 
     @media (max-width: 768px) {
-      .navbar {
+      .navbar1 {
         overflow-x: auto;
         padding: 0;
       }
 
-      .nav-links {
+      .nav-links1 {
         flex-wrap: nowrap;
         gap: 15px;
         min-width: max-content;
       }
 
-      .nav-links a {
+      .nav-links1 a {
         white-space: nowrap;
         
       }
     }
 
-    .navbar::-webkit-scrollbar {
+    .navbar1::-webkit-scrollbar {
       display: none;
     }
 
-    .navbar {
+    .navbar1 {
       -ms-overflow-style: none;
       scrollbar-width: none;
       position: relative; /* Needed to create stacking context */

@@ -2,6 +2,8 @@ import React from 'react';
 import './Navbar.css';
 import { Link } from "react-router-dom";
 import Login from "../Pages/Login";
+import { useNavigate } from "react-router-dom";
+
 
 function Navbar() {
     const gradientStyle = {
@@ -17,6 +19,11 @@ function Navbar() {
 
 
     };
+
+    const navigate = useNavigate();
+  const handleSubmit = (e) => {
+navigate("/dashboard");   
+  };
 
     return (
         <header className="navbar">
@@ -40,7 +47,7 @@ function Navbar() {
             </nav>
 
             <div className="right-section">
-                <button><Link className="login-btn" to="/login">Login</Link> </button>
+                <button onClick={handleSubmit} className='login-btn'>Login </button>
             </div>
             
 

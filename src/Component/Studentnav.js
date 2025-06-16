@@ -19,8 +19,8 @@ function Studentnav() {
 
       <hr />
 
-      <div className="navbar">
-        <div className="nav-links">
+      <div className="navbar1">
+        <div className="nav-links1">
           <a href="/classclash">Clash class</a>
                 <a href="/round2">School Showdown</a>
                 <a href="/finale">PreneurX Talent-Clash</a>
