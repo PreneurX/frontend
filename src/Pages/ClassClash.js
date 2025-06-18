@@ -4,7 +4,9 @@ import Footer from "../Component/Footer";
 
 function ClassClash() {
   return (
-    <div><Voitng/>
+    <div>
+      
+      <Voitng/>
 
     <Footer/>
     

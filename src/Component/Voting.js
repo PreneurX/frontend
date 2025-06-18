@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import Logo from './Logo';
+import logo from '../assets/logo.png';
+import search from '../assets/search.png';
+import Studentnav from './Studentnav';
 
 function Voting() {
-    const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
   const [students] = useState([
     { id: 1, name: 'Mukund Madhav Tiwari', school: 'Jeevan Marg Sophia Secondary School', image: 'photo.jpeg', entry: 'I am passionate about creating new ideas that inspire my classmates!'.repeat(50) },
     { id: 2, name: 'Piyush Kumar Mishra', school: 'Jeevan Marg Sophia Secondary School', image: 'piyush.jpg', entry: 'Vote for me to make school events more fun and engaging!' },
@@ -32,7 +35,45 @@ function Voting() {
   return (
     <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', background: '#f5f8fa', color: '#333', margin: 0 }}>
       <header style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 20px', background: 'white', position: 'sticky', top: 0, zIndex: 1000 }}>
-<Logo/>        <div style={{ position: 'relative', flex: 1, maxWidth: 600 }}>
+        <img src={logo} alt="Company Logo" className="logo"/>
+
+
+        {/* <div className="navbar1" style={{background:'#f5f8fa', borderRadius:'500px', margin:'0px 20px 0px 20px', padding:'0px'}}>
+        <div className="nav-links1" >
+                    <a href="/dashboard">Home</a>
+
+          <a href="/classclash">Clash class</a>
+                <a href="/round2">School Showdown</a>
+                <a href="/finale">PreneurX Talent-Clash</a>
+                <a href="/rules">Rules</a> */}
+
+
+
+        
+{/*      
+        </div>
+      </div> */}
+
+      
+
+
+
+
+
+        <div style={{ position: 'relative', flex: 1, maxWidth: 500 }}>
+          
+ <img 
+        src={search} 
+        alt="logo" 
+        style={{
+          position: 'absolute',
+          top: '50%',
+          left: '10px',
+          transform: 'translateY(-50%)',
+          height: '20px',
+          width: '20px'
+        }} 
+      />
           <input
             type="text"
             placeholder="Search Preneurs"
@@ -50,6 +91,33 @@ function Voting() {
           />
         </div>
       </header>
+<hr />
+      <div className="navbar1" style={{background:'#f5f8fa', borderRadius:'500px', margin:'0px 20px 0px 20px', padding:'0px'}}>
+        <div className="nav-links1" >
+                    <a href="/dashboard">Home</a>
+
+          <a href="/classclash">Clash class</a>
+                <a href="/round2">School Showdown</a>
+                <a href="/finale">PreneurX Talent-Clash</a>
+                <a href="/rules">Rules</a>
+
+
+
+   
+        </div>
+      </div> 
+
+      
+
+      <hr />
+
+
+
+
+
+
+
+
 
       <main style={{ maxWidth: 1000, margin: '0 auto', padding: 0 }}>
         <h1 style={{ textAlign: 'center', fontSize: '1.8rem', fontWeight: 700, background: 'linear-gradient(to right, #083ca0, black)', WebkitBackgroundClip: 'text', color: 'transparent' }}>
@@ -57,14 +125,14 @@ function Voting() {
         </h1>
         <p style={{ textAlign: 'center', fontSize: '1rem', marginBottom: 16 }}>Vote for your favorite classmate! Top 50% advance to the next round.</p>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', margin: '0 15px', gap: '20px' }}>
+        <div style={{  gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', margin: '10px', gap: '20px' }}>
           {filteredStudents.map(student => {
             const isLong = student.entry.length > maxLength;
             const shortText = student.entry.slice(0, maxLength) + '...';
             const isExpanded = expandedEntries[student.id];
 
             return (
-              <div key={student.id} style={{ background: 'white', padding: 15, borderRadius: 10, boxShadow: '0 2px 5px rgba(0,0,0,0.1)', display: 'flex', alignItems: 'flex-start', gap: 12 }}>
+              <div key={student.id} style={{ background: 'white', padding: 15, borderRadius: 10, boxShadow: '0 2px 5px rgba(0,0,0,0.1)', display: 'flex', alignItems: 'flex-start', gap: '12px' ,margin:'20px' }}>
                 <img src={student.image} alt={student.name} style={{ width: 50, height: 50, objectFit: 'cover', borderRadius: '50%' }} />
                 <div style={{ flex: 1 }}>
                   <h3 style={{ margin: 0, fontSize: 18, background: 'linear-gradient(to right, #083ca0, black)', WebkitBackgroundClip: 'text', color: 'transparent' }}>{student.name}</h3>
@@ -115,7 +183,7 @@ function Voting() {
       </main>
     </div>
   );
-  
+
 }
 
 export default Voting

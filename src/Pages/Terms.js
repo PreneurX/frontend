@@ -12,7 +12,7 @@ function Terms() {
         <h1>Terms and Conditions</h1>
       </header>
 
-      <div className="container">
+      <div className="container1">
         <p>
           <strong>PreneurX</strong> ("we", "our", or "us") is an EdTech company
           based in Deoria, Uttar Pradesh, India. By using our website{" "}

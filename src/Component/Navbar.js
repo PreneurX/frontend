@@ -3,6 +3,7 @@ import './Navbar.css';
 import { Link } from "react-router-dom";
 import Login from "../Pages/Login";
 import { useNavigate } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 
 function Navbar() {
@@ -29,12 +30,13 @@ navigate("/dashboard");
         <header className="navbar">
             <div className="left-section">
                 {/* Logo with gradient */}
-                <span style={gradientStyle}>P
+                {/* <span style={gradientStyle}>P
                 <span style={{...gradientStyle, fontSize: '1rem' }}>RENEUR</span>
                 <span style={alpha}>X</span>
 
 
-                </span>
+                </span> */}
+        <img src={logo} alt="Company Logo" className='logomy'/>
                 
             </div>
 

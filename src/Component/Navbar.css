@@ -30,6 +30,15 @@
     font-size: 1.4rem;
     color: #083CA0;
   }
+
+
+  .logomy{
+    height: 22px;
+    padding-top: 4px;
+    width: auto;
+    object-fit: contain;
+    cursor: pointer;
+  }
   
   /* Nav Links */
   .nav-links {

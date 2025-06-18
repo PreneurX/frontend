@@ -126,7 +126,7 @@ function StudentDashboard() {
         WebkitTextFillColor: 'transparent',
       },
       p: {
-        margin: 0,
+        margin: -5,
         fontSize: '16px',
         fontWeight: 'bolder',
         color: '#515151',

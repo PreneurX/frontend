@@ -1,6 +1,6 @@
 .navbar1 {
   width: 100%;
-  background: white;
+  background: #f5f8fa;
   overflow-x: auto; /* enable scroll */
   -ms-overflow-style: none; /* hide scrollbar in IE/Edge */
   scrollbar-width: none; /* hide scrollbar in Firefox */
@@ -136,6 +136,7 @@
   min-width: 180px;
   max-width: 90vw;
   z-index: 999;
+  gap:5px;
 }
 
     /* .dropdown {
@@ -202,6 +203,8 @@
 
     .nav-links1 a:hover {
       background: #f0f0f0;
+            text-decoration: none;
+
     }
 
     @media (max-width: 768px) {

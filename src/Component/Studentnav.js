@@ -21,16 +21,12 @@ function Studentnav() {
 
       <div className="navbar1">
         <div className="nav-links1">
+                    <a href="/dashboard">Home</a>
+
           <a href="/classclash">Clash class</a>
                 <a href="/round2">School Showdown</a>
                 <a href="/finale">PreneurX Talent-Clash</a>
                 <a href="/rules">Rules</a>
-
-
-
-          {/* {['Clash Class', 'School Showdown', 'PreneurX Talent-Clash', 'Rules'].map((link, i) => (
-            <a key={i} href="/classclash">{link}</a>
-          ))} */}
         </div>
       </div>
 

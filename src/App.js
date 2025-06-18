@@ -14,11 +14,12 @@ import Voting from './Component/Voting';
 import ClassClash from './Pages/ClassClash';
 import Privacy from './Pages/Privacy';
 import Rules from './Component/Rules';
+import Round2 from './Pages/Round2';
+import Finale from './Pages/Finale';
 
 function App() {
   return (
     <Router>
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/terms" element={<Terms />} />
@@ -28,6 +29,10 @@ function App() {
         <Route path="/classclash" element={<ClassClash />} />
         <Route path="/policy" element={<Privacy />} />
                 <Route path="/rules" element={<Rules />} />
+                                <Route path="/round2" element={<Round2 />} />
+                <Route path="/finale" element={<Finale />} />
+
+
 
 
 
