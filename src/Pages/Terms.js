@@ -2,6 +2,8 @@ import React from 'react'
 import "./Terms.css";
 import Navbar from '../Component/Navbar'
 import Footer from '../Component/Footer'
+import { Link } from "react-router-dom";
+
 
 function Terms() {
   return (
