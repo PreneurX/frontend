@@ -5,6 +5,8 @@ import { useAuth } from '../Context/Context';
 import axios from 'axios';
 import Studentnav from '../Component/Studentnav';
 import Footer from '../Component/Footer';
+import { Link } from "react-router-dom";
+
 import Loading from '../Component/Loading';
 
 function Finale() {
