@@ -16,9 +16,9 @@ function Terms() {
         <p>
           <strong>PreneurX</strong> ("we", "our", or "us") is an EdTech company
           based in Deoria, Uttar Pradesh, India. By using our website{" "}
-          <a href="https://preneurx.in" target="_blank" rel="noopener noreferrer">
+          <Link to="https://preneurx.in" target="_blank" rel="noopener noreferrer">
             preneurx.in
-          </a>{" "}
+          </Link>{" "}
           or participating in our talent competitions, you agree to the following Terms
           and Conditions.
         </p>
@@ -82,14 +82,14 @@ function Terms() {
           <br />
           Deoria, Uttar Pradesh, India
           <br />
-          Email: <a href="mailto:preneurxteam@gmail.com">preneurxteam@gmail.com</a>
+          Email: <Link to="mailto:preneurxteam@gmail.com">preneurxteam@gmail.com</Link>
           <br />
           Phone: +91 6386660600
           <br />
           Website:{" "}
-          <a href="https://preneurx.in" target="_blank" rel="noopener noreferrer">
+          <Link to="https://preneurx.in" target="_blank" rel="noopener noreferrer">
             https://preneurx.in
-          </a>
+          </Link>
         </p>
       </div>
 
