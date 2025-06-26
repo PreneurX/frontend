@@ -3,7 +3,7 @@ import './Footer.css'
 import logo from '../assets/logo.png';
 import { Link } from "react-router-dom";
 
-import whatsappIcon from '../assets/whatsapp.png'; // Make sure this path is correct
+import whatsappIcon from '../assets/whatsapp.png'; 
 
 function Footer() {
   return (
@@ -20,13 +20,11 @@ function Footer() {
           <Link to="/policy">Privacy Policy</Link>
 
 
-          // <a href="/about">About us</a>
-          // <a href="/policy">Privacy Policy</a>
+        
           <Link to="/terms">Terms & Condition</Link> 
           <Link to="/contact">Contact us</Link>
 
 
-          // <a href="/contact">Contact Us</a>
         </div>
 
         <div className="footer-social">
