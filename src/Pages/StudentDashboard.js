@@ -168,7 +168,7 @@ const studentId = student1?._id;console.log(studentId);
           </div>
         )}
 
-        {/* {posted && (
+         {posted && (
           <div style={styles.postDisplay}>
             <p>{posted}</p>
             <div style={styles.postActions}>
@@ -192,7 +192,7 @@ const studentId = student1?._id;console.log(studentId);
               </button>
             </div>
           </div>
-        )} */}
+        )} 
       </div>
     </div>
   );
