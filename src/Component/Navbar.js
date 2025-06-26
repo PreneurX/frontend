@@ -1,6 +1,6 @@
 import React from 'react';
 import './Navbar.css';
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 
 
@@ -39,11 +39,22 @@ navigate("/dashboard");
             </div>
 
             <nav className="nav-links">
-                <a href="/">Home</a>
-                <a href="/">Prize Pool</a>
-                <a href="/rule">Rules</a>
-                <a href="/crownkeeper">Crown Keepers</a>
-                <a href="/contact">Contact Us</a>
+            <Link to="/">Home</Link>
+            <Link to="/">Prize Pool</Link>
+            <Link to="/rule">Rules</Link>
+            <Link to="/crownleeper">Crown Keeper</Link>
+            <Link to="/contact">Contact Us</Link>
+
+            
+
+
+
+
+                // <a href="/">Home</a>
+                // <a href="/">Prize Pool</a>
+                // <a href="/rule">Rules</a>
+                // <a href="/crownkeeper">Crown Keepers</a>
+                // <a href="/contact">Contact Us</a>
             </nav>
 
             <div className="right-section">
