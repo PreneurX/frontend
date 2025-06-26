@@ -3,6 +3,7 @@ import logo from "../assets/logo.png";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../Context/Context";
 import "./Studentnav.css";
+import { Link } from "react-router-dom";
 
 function Studentnav() {
   const [dropdownVisible, setDropdownVisible] = useState(false);
@@ -29,12 +30,17 @@ function Studentnav() {
 
       <div className="navbar1">
         <div className="nav-links1">
-          <a href="/dashboard">Home</a>
+          // <a href="/dashboard">Home</a>
 
-          <a href="/classclash">Clash class</a>
-          <a href="/round2">School Showdown</a>
-          <a href="/finale">PreneurX Talent-Clash</a>
-          <a href="/rules">Rules</a>
+          // <a href="/classclash">Clash class</a>
+          // <a href="/round2">School Showdown</a>
+          // <a href="/finale">PreneurX Talent-Clash</a>
+          // <a href="/rules">Rules</a>
+  <Link to="/dashboard">Home</Link>
+<Link to="/classclash">Clash class</Link>
+<Link to="/round2">School Showdown</Link>
+<Link to="/finale">PreneurX Talent-Clash</Link>
+<Link to="/rules">Rules</Link>
         </div>
       </div>
 
