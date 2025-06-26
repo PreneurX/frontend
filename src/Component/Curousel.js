@@ -5,12 +5,12 @@ function Curousel() {
         <div>
             <div className="mobile-carousel">
                 
-                <div className="carousel-option"><a href="/">Home</a></div>
-                <div className="carousel-option"><a href="/">Prize Pool</a></div>
-                <div className="carousel-option"><a href="/rule">Rules</a></div>
-                <div className="carousel-option"><a href="/crownkeeper">Crown Keepers</a></div>
-                <div className="carousel-option"><a href="/contact">Contact us</a></div>
-                <div className="carousel-option"><a href="/">Team</a></div>
+                <div className="carousel-option"><Link to="/">Home</Link></div>
+                <div className="carousel-option"><Link to="/">Prize Pool</Link></div>
+                <div className="carousel-option"><Link to="/rule">Rules</Link></div>
+                <div className="carousel-option"><Link to="/crownkeepers">Crown Keepers</Link></div>
+                <div className="carousel-option"><Link to="/contact">Contact us</Link></div>
+                <div className="carousel-option"><Link to="/">Team</Link></div>
                 {/* <div className="carousel-option"><a href="#">Trending</a></div>
                 <div className="carousel-option"><a href="#">Trending</a></div>  */}
 
