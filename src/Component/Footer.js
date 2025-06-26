@@ -30,7 +30,7 @@ function Footer() {
         </div>
 
         <div className="footer-social">
-          <a href="/"><img src={whatsappIcon} alt="WhatsApp" /></a>
+          <Link to="/"><img src={whatsappIcon} alt="WhatsApp" /></Link>
         </div>
       </div>
 
