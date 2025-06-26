@@ -4,6 +4,8 @@ import search from '../assets/search.png';
 import { useAuth } from '../Context/Context';
 import axios from 'axios';
 import Studentnav from './Studentnav';
+import { Link } from "react-router-dom";
+
 import Footer from './Footer';
 import Loading from './Loading';
 
