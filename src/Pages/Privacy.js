@@ -13,7 +13,7 @@ const Privacy = () => {
 
       <div className="privacy-container">
         <p>
-          <strong>PreneurX</strong> ("we", "our", or "us") is an EdTech company based in Deoria, Uttar Pradesh, India, committed to empowering students through innovative learning solutions and talent discovery. This Privacy Policy explains how we collect, use, protect, and share your information when you visit our website <a href="https://preneurx.in" target="_blank" rel="noopener noreferrer">preneurx.in</a> or use our services. By using our services, you agree to the terms of this Privacy Policy.
+          <strong>PreneurX</strong> ("we", "our", or "us") is an EdTech company based in Deoria, Uttar Pradesh, India, committed to empowering students through innovative learning solutions and talent discovery. This Privacy Policy explains how we collect, use, protect, and share your information when you visit our website <Link to="https://preneurx.in" target="_blank" rel="noopener noreferrer">preneurx.in</Link> or use our services. By using our services, you agree to the terms of this Privacy Policy.
         </p>
 
         <h2>1. Information We Collect</h2>
@@ -47,9 +47,9 @@ const Privacy = () => {
         <p>You have the right to:</p>
         <ul>
           <li>Access, correct, or delete your personal information.</li>
-          <li>Opt-out of receiving marketing communications (by emailing us at <a href="mailto:preneurxteam@gmail.com">preneurxteam@gmail.com</a>).</li>
+          <li>Opt-out of receiving marketing communications (by emailing us at <Link to="mailto:preneurxteam@gmail.com">preneurxteam@gmail.com</Link>).</li>
         </ul>
-        <p>To exercise these rights, please contact us at <a href="mailto:preneurxteam@gmail.com">preneurxteam@gmail.com</a> or call us at +91 6386660600.</p>
+        <p>To exercise these rights, please contact us at <Link to="mailto:preneurxteam@gmail.com">preneurxteam@gmail.com</Link> or call us at +91 6386660600.</p>
 
         <h2>6. Cookies and Tracking</h2>
         <p>We may use cookies and similar technologies to enhance your experience on our website. You can control cookie preferences through your browser settings.</p>
@@ -64,9 +64,9 @@ const Privacy = () => {
         <p>
           <strong>PreneurX</strong><br />
           Deoria, Uttar Pradesh, India<br />
-          Email: <a href="mailto:preneurxteam@gmail.com">preneurxteam@gmail.com</a><br />
+          Email: <Link to="mailto:preneurxteam@gmail.com">preneurxteam@gmail.com</Link><br />
           Phone: +91 6386660600<br />
-          Website: <a href="https://preneurx.in" target="_blank" rel="noopener noreferrer">https://preneurx.in</a>
+          Website: <Link to="https://preneurx.in" target="_blank" rel="noopener noreferrer">https://preneurx.in</Link>
         </p>
       </div>
 
