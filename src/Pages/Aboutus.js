@@ -130,7 +130,7 @@ const AboutUs = () => {
         </p>
 
         <p style={styles.p}>
-          Have questions? Reach out to us at <a href="mailto:preneurxteam@gmail.com" style={styles.a}>preneurxteam@gmail.com</a> or visit our website <a href="https://preneurx.in" target="_blank" style={styles.a}>preneurx.in</a>.
+          Have questions? Reach out to us at <a href="mailto:preneurxteam@gmail.com" style={styles.a}>preneurxteam@gmail.com</a> or visit our website <a href="https://preneurx.in" style={styles.a}>preneurx.in</a>.
         </p>
       </div>
 

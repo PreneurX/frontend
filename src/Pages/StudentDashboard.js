@@ -1,13 +1,13 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import Studentnav from '../Component/Studentnav';
 
 function StudentDashboard() {
-  const [dropdownVisible, setDropdownVisible] = useState(false);
+  // const [dropdownVisible, setDropdownVisible] = useState(false);
   const [post, setPost] = useState('');
   const [posted, setPosted] = useState('');
   const [profilePic, setProfilePic] = useState('');
   const [student, setStudent] = useState(null);
-  const fileInputRef = useRef(null);
+  // const fileInputRef = useRef(null);
 
 const student1 = JSON.parse(localStorage.getItem("studentUser"));
 const studentId = student1?._id;console.log(studentId);
@@ -128,7 +128,7 @@ const studentId = student1?._id;console.log(studentId);
         body: JSON.stringify({ studentId, content: post.trim() }),
       });
 
-      const data = await res.json();
+      // const data = await res.json();
       if (res.ok) {
         setPosted(post.trim());
         setPost('');

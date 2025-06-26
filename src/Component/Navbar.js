@@ -1,25 +1,23 @@
 import React from 'react';
 import './Navbar.css';
-import { Link } from "react-router-dom";
-import Login from "../Pages/Login";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 
 
 function Navbar() {
-    const gradientStyle = {
-        background: 'linear-gradient(to right, #0e1010,rgb(13, 94, 201))',
-        WebkitBackgroundClip: 'text',
-        WebkitTextFillColor: 'transparent',
-        fontWeight: 700,
-        fontSize: '1.4rem',
-        fontFamily: 'DM Sans, sans-serif',
-    };
-    const alpha ={
-        fontFamily: 'DM Sans, sans-serif',
+    // const gradientStyle = {
+    //     background: 'linear-gradient(to right, #0e1010,rgb(13, 94, 201))',
+    //     WebkitBackgroundClip: 'text',
+    //     WebkitTextFillColor: 'transparent',
+    //     fontWeight: 700,
+    //     fontSize: '1.4rem',
+    //     fontFamily: 'DM Sans, sans-serif',
+    // };
+    // const alpha ={
+    //     fontFamily: 'DM Sans, sans-serif',
 
 
-    };
+    // };
 
     const navigate = useNavigate();
   const handleSubmit = (e) => {
@@ -42,7 +40,7 @@ navigate("/dashboard");
 
             <nav className="nav-links">
                 <a href="/">Home</a>
-                <a href="#">Prize Pool</a>
+                <a href="/">Prize Pool</a>
                 <a href="/rule">Rules</a>
                 <a href="/crownkeeper">Crown Keepers</a>
                 <a href="/contact">Contact Us</a>

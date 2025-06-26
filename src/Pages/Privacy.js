@@ -1,7 +1,5 @@
 import React from "react";
 import "./Privacy.css";
-import logo from "../assets/logo.png";
-import whatsappIcon from "../assets/whatsapp.png";
 import Footer from "../Component/Footer";
 import Navbar from "../Component/Navbar";
 

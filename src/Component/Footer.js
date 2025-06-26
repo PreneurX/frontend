@@ -1,7 +1,6 @@
 import React from 'react';
 import './Footer.css'
 import logo from '../assets/logo.png';
-import Logo from './Logo';
 import { Link } from "react-router-dom";
 
 import whatsappIcon from '../assets/whatsapp.png'; // Make sure this path is correct
