@@ -150,7 +150,7 @@ function Voting() {
           <Link to="/classclash">Class Clash</Link>
           <Link to="/round2">School Showdown</Link>
           <Link to="/finale">PreneurX Talent Clash</Link>
-          <Link to="/rules">Rules</a>
+          <Link to="/rules">Rules</Link>
         </div>
       </div>
 
