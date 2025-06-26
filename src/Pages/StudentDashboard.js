@@ -1,15 +1,16 @@
-import React, { useState, useRef } from 'react';
-import Logo from '../Component/Logo';
+import React, { useState, useEffect, useRef } from 'react';
 import Studentnav from '../Component/Studentnav';
 
 function StudentDashboard() {
- const [dropdownVisible, setDropdownVisible] = useState(false);
+  const [dropdownVisible, setDropdownVisible] = useState(false);
   const [post, setPost] = useState('');
   const [posted, setPosted] = useState('');
-  const [profilePic, setProfilePic] = useState('photo.jpeg');
-
+  const [profilePic, setProfilePic] = useState('');
+  const [student, setStudent] = useState(null);
   const fileInputRef = useRef(null);
 
+const student1 = JSON.parse(localStorage.getItem("studentUser"));
+const studentId = student1?._id;console.log(studentId);
   const styles = {
     body: {
       margin: 0,
@@ -18,83 +19,6 @@ function StudentDashboard() {
       fontFamily: "'Plus Jakarta Sans', sans-serif",
       overflowX: 'hidden',
       boxSizing: 'border-box',
-    },
-    header: {
-      width: '100%',
-      background: 'white',
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      padding: '10px 20px',
-      position: 'sticky',
-      top: 0,
-      zIndex: 1000,
-    },
-    logo: {
-      height: '22px',
-      paddingTop: '4px',
-      width: 'auto',
-      objectFit: 'contain',
-      cursor: 'pointer',
-    },
-    hamburger: {
-      width: '35px',
-      height: '25px',
-      borderRadius: '5px',
-      cursor: 'pointer',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'space-around',
-      padding: '5px',
-      background: 'linear-gradient(to right, #083ca0, black)',
-    },
-    hamburgerBar: {
-      height: '3px',
-      background: 'white',
-      borderRadius: '2px',
-      transition: '0.3s',
-    },
-    navbar: {
-      width: '100%',
-      background: 'white',
-      display: 'flex',
-      justifyContent: 'space-around',
-      boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
-    },
-    navLinks: {
-      display: 'flex',
-      gap: '20px',
-      flexWrap: 'wrap',
-    },
-    navLink: {
-      textDecoration: 'none',
-      color: '#515151',
-      fontSize: '22px',
-      fontVariantCaps: 'all-petite-caps',
-      padding: '5px 10px',
-      borderRadius: '4px',
-      transition: 'background 0.2s',
-    },
-    dropdown: {
-      position: 'absolute',
-      top: '60px',
-      right: '20px',
-      background: 'white',
-      border: '1px solid #ccc',
-      borderRadius: '8px',
-      boxShadow: '0 4px 10px rgba(0,0,0,0.1)',
-      display: dropdownVisible ? 'flex' : 'none',
-      flexDirection: 'column',
-      minWidth: '180px',
-      zIndex: 999,
-    },
-    dropdownItem: {
-      padding: '10px 15px',
-      textDecoration: 'none',
-      color: '#083ca0',
-      fontWeight: 600,
-      borderBottom: '1px solid #eee',
-      cursor: 'pointer',
     },
     container: {
       maxWidth: '600px',
@@ -172,46 +96,61 @@ function StudentDashboard() {
     },
   };
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const profileRes = await fetch(`https://backend-gpe5.onrender.com/api/student/me/${studentId}`);
+        const studentData = await profileRes.json();
+        console.log(studentData);
+        setStudent(studentData);
+        setProfilePic(studentData.profilePic || "https://img.freepik.com/premium-vector/profile-picture-placeholder-avatar-silhouette-gray-tones-icon-colored-shapes-gradient_1076610-40164.jpg?semt=ais_hybrid&w=740");
+
+        const postRes = await fetch(`https://backend-gpe5.onrender.com/api/student/post/${studentId}`);
+        const postData = await postRes.json();
+        if (postData?.content) {
+          setPosted(postData.content);
+        }
+      } catch (err) {
+        console.error("Error loading student or post", err);
+      }
+    };
+
+    if (studentId) fetchData();
+  }, [studentId]);
+
+  const handlePostSubmit = async () => {
+    if (!post.trim()) return;
+
+    try {
+      const res = await fetch("https://backend-gpe5.onrender.com/api/student/post", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ studentId, content: post.trim() }),
+      });
+
+      const data = await res.json();
+      if (res.ok) {
+        setPosted(post.trim());
+        setPost('');
+      } else {
+        alert("Failed to save post");
+      }
+    } catch (err) {
+      console.error("Error saving post", err);
+      alert("Server error");
+    }
+  };
+
   return (
     <div style={styles.body}>
-
-
-      <Studentnav/>
-      {/* <div style={styles.header}>
-        <Logo/>
-        <div style={styles.hamburger} onClick={() => setDropdownVisible(!dropdownVisible)}>
-          <span style={styles.hamburgerBar}></span>
-          <span style={styles.hamburgerBar}></span>
-          <span style={styles.hamburgerBar}></span>
-        </div>
-      </div>
-      <hr/>
-      <div style={styles.navbar}>
-        <div style={styles.navLinks}>
-          {['Clash Class', 'School Showdown', 'PreneurX Talent-Clash', 'Rules'].map((link, i) => (
-            <a key={i} href="#" style={styles.navLink}>{link}</a>
-          ))}
-        </div>
-      </div>
-      <hr/> */}
-
-      {/* <div style={styles.dropdown}>
-        <div style={styles.dropdownItem} onClick={() => fileInputRef.current.click()}>📸 Add/Change Profile Picture</div>
-        <input type="file" accept="image/*" ref={fileInputRef} style={{ display: 'none' }} onChange={(e) => {
-          const file = e.target.files[0];
-          
-        }} />
-        <div style={styles.dropdownItem}>❓ Need Help</div>
-        <div style={styles.dropdownItem}>🔔 Notifications</div>
-        <div style={styles.dropdownItem}>🚪 Log Out</div>
-      </div> */}
+      <Studentnav />
 
       <div style={styles.container}>
         <div style={styles.profileHeader}>
-          <img src={profilePic} alt="Profile" style={styles.profileImage} />
+          <img src={profilePic || "https://img.freepik.com/premium-vector/profile-picture-placeholder-avatar-silhouette-gray-tones-icon-colored-shapes-gradient_1076610-40164.jpg?semt=ais_hybrid&w=740"} alt="Profile" style={styles.profileImage} />
           <div>
-            <h3 style={styles.profileText.h3}>Mukund Madhav Tiwari</h3>
-            <p style={styles.profileText.p}>Jeevan Marg Sophia Secondary School</p>
+            <h3 style={styles.profileText.h3}>{student?.name || "..."}</h3>
+            <p style={styles.profileText.p}>{student?.school || "..."}</p>
           </div>
         </div>
 
@@ -223,35 +162,37 @@ function StudentDashboard() {
               value={post}
               onChange={(e) => setPost(e.target.value)}
             />
-            <button style={styles.button} onClick={() => {
-              if (post.trim()) {
-                setPosted(post.trim());
-              }
-            }}>
+            <button style={styles.button} onClick={handlePostSubmit}>
               Post
             </button>
           </div>
         )}
 
-        {posted && (
+        {/* {posted && (
           <div style={styles.postDisplay}>
             <p>{posted}</p>
             <div style={styles.postActions}>
-              <button style={styles.button} onClick={() => {
-                setPost(posted);
-                setPosted('');
-              }}>
+              <button
+                style={styles.button}
+                onClick={() => {
+                  setPost(posted);
+                  setPosted('');
+                }}
+              >
                 Edit
               </button>
-              <button style={styles.button} onClick={() => {
-                setPosted('');
-                setPost('');
-              }}>
+              <button
+                style={styles.button}
+                onClick={() => {
+                  setPosted('');
+                  setPost('');
+                }}
+              >
                 Delete
               </button>
             </div>
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );

@@ -15,9 +15,11 @@
   flex-direction: row;
   white-space: nowrap; /* prevent wrapping */
   gap: 20px;
-  padding: 10px 20px;
+  padding: 0px 10px;
   min-width: max-content;
 }
+
+
 
 .nav-links1 a {
   text-decoration: none;

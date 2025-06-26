@@ -3,52 +3,105 @@ import Curousel from '../src/Component/Curousel';
 import Home from './Pages/Home';
 import Terms from './Pages/Terms';
 import Login from "./Pages/Login";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 
 
 import './App.css';
+import { AuthProvider } from './Context/Context';
 import AboutUs from './Pages/Aboutus';
 import StudentDashboard from './Pages/StudentDashboard';
 import Voting from './Component/Voting';
 import ClassClash from './Pages/ClassClash';
 import Privacy from './Pages/Privacy';
 import Rules from './Component/Rules';
-import Round2 from './Pages/Round2';
 import Finale from './Pages/Finale';
+import AdminSignup from './Pages/AdminSignup';
+import AdminLogin from './Pages/AdminLogin';
+import AdminDashboard from './Pages/AdminDashboard';
+import PrivateRoute from './Component/PrivateROute';
+import PrivateStudentRoute from './Component/PrivateStudentRoute';
+import SchoolShowdown from './Pages/SchoolShowdown';
+import Rule from './Pages/Rule';
+import ContactUs from './Pages/Contact';
+import CrownKeepers from './Pages/CrownKeepers';
+
+
+
+
+
+
+
+
+
+//admin
+
 
 function App() {
   return (
-    <Router>
+    <AuthProvider>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/about" element={<AboutUs />} />
-        <Route path="/dashboard" element={<StudentDashboard />} />
+        <Route path="/dashboard" element={
+          <PrivateStudentRoute>
+            <StudentDashboard />
+          </PrivateStudentRoute>
+
+        } />
         <Route path="/voting" element={<Voting />} />
-        <Route path="/classclash" element={<ClassClash />} />
+        <Route path="/classclash" element={
+          <PrivateStudentRoute>
+            <ClassClash />
+          </PrivateStudentRoute>
+        } />
         <Route path="/policy" element={<Privacy />} />
-                <Route path="/rules" element={<Rules />} />
-                                <Route path="/round2" element={<Round2 />} />
-                <Route path="/finale" element={<Finale />} />
-
-
-
-
-
-
-
+        <Route path="/rules" element={<Rules />} />
+        <Route path="/round2" element={
+          <PrivateStudentRoute>
+            <SchoolShowdown/>
+          </PrivateStudentRoute>
+        } />
+        <Route path="/finale" element={
+          <PrivateStudentRoute>
+            <Finale />
+          </PrivateStudentRoute>
+        } />
+        <Route path="/rule" element={<Rule />} />
+        <Route path="/contact" element={<ContactUs />} />
+                <Route path="/crownkeeper" element={<CrownKeepers />} />
 
 
 
 
         {/* <Route path="/prize-pool" element={<PrizePool />} />
-        <Route path="/rules" element={<Rules />} />
-        <Route path="/contact" element={<Contact />} /> */}
+         */}
 
         <Route path="/login" element={<Login />} />
+
+
+
+
+        {/* admin routes */}
+
+        <Route path="/admin-signup" element={<AdminSignup />} />
+        <Route path="/admin-login" element={<AdminLogin />} />
+        <Route path="/admin-dashboard" element={
+          <PrivateRoute>
+            <AdminDashboard />
+          </PrivateRoute>
+        } />
+
+
+
+
+
+
+
       </Routes>
-    </Router>
+    </AuthProvider>
+
   );
 }
 export default App;

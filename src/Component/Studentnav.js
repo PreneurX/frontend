@@ -1,10 +1,18 @@
 import React, { useState, useRef } from 'react';
 import logo from "../assets/logo.png";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../Context/Context";
 import "./Studentnav.css";
 
 function Studentnav() {
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const fileInputRef = useRef(null);
+    const { logout } = useAuth();
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    logout();
+    navigate("/login"); // or wherever your login route is
+  };
 
   return (
     <div>
@@ -21,12 +29,12 @@ function Studentnav() {
 
       <div className="navbar1">
         <div className="nav-links1">
-                    <a href="/dashboard">Home</a>
+          <a href="/dashboard">Home</a>
 
           <a href="/classclash">Clash class</a>
-                <a href="/round2">School Showdown</a>
-                <a href="/finale">PreneurX Talent-Clash</a>
-                <a href="/rules">Rules</a>
+          <a href="/round2">School Showdown</a>
+          <a href="/finale">PreneurX Talent-Clash</a>
+          <a href="/rules">Rules</a>
         </div>
       </div>
 
@@ -41,14 +49,38 @@ function Studentnav() {
             accept="image/*"
             ref={fileInputRef}
             style={{ display: 'none' }}
-            onChange={(e) => {
+            onChange={async (e) => {
               const file = e.target.files[0];
-              // handle image
+              if (!file) return;
+
+              const formData = new FormData();
+              formData.append("profilePic", file);
+
+const student1 = JSON.parse(localStorage.getItem("studentUser"));
+const studentId = student1?._id;console.log(studentId);
+              try {
+                const res = await fetch(`https://backend-gpe5.onrender.com/api/student/upload-profile/${studentId}`, {
+                  method: "POST",
+                  body: formData,
+                });
+
+                const data = await res.json();
+                if (res.ok) {
+                  alert("Profile picture updated!");
+                  window.location.reload(); // or update state to refresh UI
+                } else {
+                  alert(data.message || "Upload failed frontend");
+                }
+              } catch (err) {
+                console.error("Upload error", err);
+                alert("Server error");
+              }
             }}
+
           />
           <div>❓ Need Help</div>
           <div>🔔 Notifications</div>
-          <div>🚪 Log Out</div>
+          <div onClick={handleLogout}>🚪 Log Out</div>
         </div>
       )}
     </div>

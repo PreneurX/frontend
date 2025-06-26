@@ -3,11 +3,10 @@ import logo from '../assets/logo.png';
 import search from '../assets/search.png';
 import { useAuth } from '../Context/Context';
 import axios from 'axios';
-import Studentnav from './Studentnav';
-import Footer from './Footer';
-import Loading from './Loading';
+import Studentnav from '../Component/Studentnav';
+import Loading from '../Component/Loading';
 
-function Voting() {
+function SchoolShowdown() {
   const { user } = useAuth();
   const [width, setWidth] = useState(window.innerWidth);
   const [searchTerm, setSearchTerm] = useState('');
@@ -27,22 +26,23 @@ function Voting() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        if (!user || !user.school || !user.classLevel) return;
+        if (!user || !user.school) return;
+
         const [postsRes, roundRes, voteRes] = await Promise.all([
-          axios.get(`https://backend-gpe5.onrender.com/api/student/class-clash/${user.school}/${user.classLevel}`),
+          axios.get(`https://backend-gpe5.onrender.com/api/student/round2-posts/${user.school}`),
           axios.get(`https://backend-gpe5.onrender.com/api/rounds/school/${user.school}`),
-          axios.get(`https://backend-gpe5.onrender.com/api/student/vote-status/${user._id}/1`),
+          axios.get(`https://backend-gpe5.onrender.com/api/student/vote-status/${user._id}/2`),
         ]);
 
         setPosts(postsRes.data);
         const myPost = postsRes.data.find(p => p.studentId._id === user._id);
         if (myPost) setMyPostId(myPost._id);
 
-        setVotingOpen(roundRes.data.round1.votingOpen);
+        setVotingOpen(roundRes.data.round2.votingOpen);
         setUserVotes(voteRes.data);
         setLoading(false);
       } catch (err) {
-        console.error("Error fetching data:", err);
+        console.error("Error fetching round 2 data:", err);
       }
     };
     fetchData();
@@ -60,17 +60,17 @@ function Voting() {
       await axios.post(`https://backend-gpe5.onrender.com/api/student/${type}`, {
         postId,
         studentId: user._id,
-        round: 1
+        round: 2
       });
 
       setPosts(prev =>
         prev.map(p =>
           p._id === postId
             ? {
-              ...p,
-              voteCount: type === "vote" ? p.voteCount + 1 : p.voteCount,
-              superVoteCount: type === "super-vote" ? p.superVoteCount + 1 : p.superVoteCount,
-            }
+                ...p,
+                voteCount: type === "vote" ? p.voteCount + 1 : p.voteCount,
+                superVoteCount: type === "super-vote" ? p.superVoteCount + 1 : p.superVoteCount,
+              }
             : p
         )
       );
@@ -94,7 +94,7 @@ function Voting() {
     student.studentId.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  if (loading) return <p><Loading /></p>;
+  if (loading) return <p><Loading/></p>;
 
   if (!votingOpen) return (
     <>
@@ -109,7 +109,6 @@ function Voting() {
     <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', background: '#f5f8fa', color: '#333', margin: 0 }}>
       <header style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 20px', background: 'white', position: 'sticky', top: 0, zIndex: 1000 }}>
         <img src={logo} alt="Company Logo" className="logo" />
-
         <div style={{ position: 'relative', flex: 1, maxWidth: `${50 * width / 100}px`, fontVariantCaps: 'pettie-caps' }}>
           <img
             src={search}
@@ -133,7 +132,6 @@ function Voting() {
               borderImage: 'linear-gradient(to right, #083ca0, black) 1',
               borderRadius: '5px',
               fontSize: '15px',
-              background: 'url(search.png) no-repeat left 10px center',
               backgroundSize: '18px 18px',
               width: '100%',
               fontVariantCaps: 'pettie-caps'
@@ -158,9 +156,9 @@ function Voting() {
 
       <main style={{ maxWidth: 1000, margin: '0 auto', padding: 0 }}>
         <h1 style={{ textAlign: 'center', fontSize: '1.8rem', fontWeight: 700, background: 'linear-gradient(to right, #083ca0, black)', WebkitBackgroundClip: 'text', color: 'transparent' }}>
-          ROUND-1<br />Class Clash
+          ROUND-2<br />School Showdown
         </h1>
-        <p style={{ textAlign: 'center', fontSize: '1rem', marginBottom: 16 }}>Vote for your favorite classmate! Top 50% advance to the next round.</p>
+        <p style={{ textAlign: 'center', fontSize: '1rem', marginBottom: 16 }}>Vote for the best talent from your school! Top 20 make it to the finale.</p>
 
         <div style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', margin: '10px', gap: '20px' }}>
           {filteredStudents.map(post => {
@@ -240,10 +238,8 @@ function Voting() {
           })}
         </div>
       </main>
-      <Footer />
-
     </div>
   );
 }
 
-export default Voting;
+export default SchoolShowdown;

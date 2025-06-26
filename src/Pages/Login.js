@@ -1,24 +1,54 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../Context/Context";
+
 
 const LoginPage = () => {
   const [mobile, setMobile] = useState("");
   const [dob, setDob] = useState("");
-const navigate = useNavigate();
-  const handleSubmit = (e) => {
-navigate("/dashboard");   
-  };
+  const navigate = useNavigate();
+   const { login } = useAuth();
+
+const handleSubmit = async (e) => {
+ 
+  e.preventDefault();
+
+  try {
+    const res = await fetch("https://backend-gpe5.onrender.com/api/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ mobile, dob })
+    });
+
+    const data = await res.json();
+    if (res.ok) {
+      login(data.token, data.user, data.role);  
+      if (data.role === "student") {
+        navigate("/dashboard");
+      } else if (data.role === "teacher") {
+        navigate("/tdash");
+      }
+    } else {
+      alert(data.message || "Login failed");
+    }
+  } catch (err) {
+    console.error("Login error:", err);
+    alert("Server error");
+  }
+};
+
+
 
   return (
     <div style={styles.container}>
       <div style={styles.card}>
         <h2 style={styles.title}>Welcome Back</h2>
         <p style={styles.subtitle}>Login to continue</p>
-        <form style={styles.form}>
+        <form style={styles.form} onSubmit={handleSubmit}>
           <label style={styles.label}>Mobile Number</label>
           <input
             type="tel"
-            pattern="[0-9]{10}"
+            // pattern="[0-9]{10}"
             placeholder="Enter your mobile number"
             value={mobile}
             onChange={(e) => setMobile(e.target.value)}
@@ -33,11 +63,7 @@ navigate("/dashboard");
             required
             style={styles.input}
           />
-          <button type="submit" style={styles.button} onClick={handleSubmit}>
-
-            Login
-            
-          </button>
+          <button type="submit" style={styles.button}>Login</button>
         </form>
       </div>
     </div>

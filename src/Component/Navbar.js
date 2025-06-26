@@ -43,9 +43,9 @@ navigate("/dashboard");
             <nav className="nav-links">
                 <a href="/">Home</a>
                 <a href="#">Prize Pool</a>
-                <a href="#">Rules</a>
-                <a href="#">Crown Keepers</a>
-                <a href="#">Contact Us</a>
+                <a href="/rule">Rules</a>
+                <a href="/crownkeeper">Crown Keepers</a>
+                <a href="/contact">Contact Us</a>
             </nav>
 
             <div className="right-section">
