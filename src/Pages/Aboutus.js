@@ -1,6 +1,8 @@
 import React from 'react';
 import Footer from '../Component/Footer';
 import Navbar from '../Component/Navbar';
+import { Link } from "react-router-dom";
+
 
 const AboutUs = () => {
   const styles = {
