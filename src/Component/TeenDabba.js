@@ -34,9 +34,9 @@ function TeenDabba() {
               <img src={rupee} alt="Rupees" />
             </div>
             <h3>Victory At Every Level</h3>
-            <p><strong>90</strong> Class Winners</p>
+            <p><strong>60</strong> Class Winners</p>
             <p><strong>50</strong> Inter School Battle Winners</p>
-            <p>Total <strong>140</strong> Reasons To Celebrate</p>
+            <p>Total <strong>110</strong> Reasons To Celebrate</p>
           </div>
         </div>
       </div>
