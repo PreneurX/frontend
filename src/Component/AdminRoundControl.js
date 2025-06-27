@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { toast } from 'react-toastify';
+
 
 const AdminRoundControl = () => {
   const [schools, setSchools] = useState([]);
@@ -45,13 +47,14 @@ const AdminRoundControl = () => {
       const updated = await res.json();
       if (res.ok) {
         setStatus((prev) => ({ ...prev, [field]: newValue }));
-        alert("Updated successfully");
+        toast.success("Updated successfully");
+        
       } else {
-        alert(updated.message);
+        toast.info(updated.message);
       }
     } catch (err) {
       console.error(err);
-      alert("Server error");
+      toast.error("Server error");
     }
   };
 
