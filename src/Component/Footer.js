@@ -28,7 +28,7 @@ function Footer() {
         </div>
 
         <div className="footer-social">
-          <Link to="/"><img src={whatsappIcon} alt="WhatsApp" /></Link>
+          <Link to="https://wa.me/message/DYGTA4MBTTQQA1"><img src={whatsappIcon} alt="WhatsApp" /></Link>
         </div>
       </div>
 
