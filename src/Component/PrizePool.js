@@ -3,13 +3,14 @@ import "./PrizePool.css";
 
 // Importing images from src/assets
 import grandNike from "../assets/grandNike.png";
+import grandAlexa from "../assets/grandAlexa.png";
 import prize2 from "../assets/2prize.png";
 import prize3 from "../assets/3prize.png";
 import prize4 from "../assets/4prize.png";
 import prize5 from "../assets/5pize.png";
 
 const seniorImages = [grandNike, prize2, prize3, prize4, prize5];
-const juniorImages = [grandNike, prize2, prize3, prize4, prize5]; // change if different
+const juniorImages = [grandAlexa, prize2, prize3, prize4, prize5]; // change if different
 
 const PrizePool = () => {
   const seniorRef = useRef(null);
