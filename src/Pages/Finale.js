@@ -176,42 +176,106 @@ function Finale() {
                   {!isMyPost && (
                     <>
                       <button
-                        onClick={() => vote(post._id, 'vote')}
-                        disabled={
-                          !votingOpen ||
-                          userVotes.votePostId !== null ||
-                          userVotes.superVotePostId === post._id
-                        }
-                        style={{
-                          background: 'linear-gradient(to right, #083ca0, black)',
-                          color: 'white',
-                          marginRight: 5,
-                          padding: '6px 12px',
-                          border: 'none',
-                          borderRadius: 5,
-                          fontWeight: 600,
-                          cursor: 'pointer',
-                          fontSize: '0.85rem'
-                        }}
-                      >Vote</button>
+  onClick={(e) => {
+    const disabled =
+      !votingOpen ||
+      userVotes.votePostId !== null ||
+      userVotes.superVotePostId === post._id;
+
+    if (disabled) {
+      toast.info(
+        !votingOpen
+          ? 'Voting is currently closed.'
+          : userVotes.votePostId !== null
+          ? 'You have already cast your vote.'
+          : 'You cannot vote for a post you super voted for.'
+      );
+      return;
+    }
+
+    vote(post._id, 'vote');
+  }}
+  style={{
+    background:
+      !votingOpen ||
+      userVotes.votePostId !== null ||
+      userVotes.superVotePostId === post._id
+        ? 'gray'
+        : 'linear-gradient(to right, #083ca0, black)',
+    color: 'white',
+    marginRight: 5,
+    padding: '6px 12px',
+    border: 'none',
+    borderRadius: 5,
+    fontWeight: 600,
+    cursor:
+      !votingOpen ||
+      userVotes.votePostId !== null ||
+      userVotes.superVotePostId === post._id
+        ? 'not-allowed'
+        : 'pointer',
+    fontSize: '0.85rem',
+    opacity:
+      !votingOpen ||
+      userVotes.votePostId !== null ||
+      userVotes.superVotePostId === post._id
+        ? 0.6
+        : 1,
+  }}
+>
+  Vote
+</button>
+
                       <button
-                        onClick={() => vote(post._id, 'super-vote')}
-                        disabled={
-                          !votingOpen ||
-                          userVotes.superVotePostId !== null ||
-                          userVotes.votePostId === post._id
-                        }
-                        style={{
-                          background: 'linear-gradient(to right, rgb(219, 107, 28), orange)',
-                          color: 'white',
-                          padding: '6px 12px',
-                          border: 'none',
-                          borderRadius: 5,
-                          fontWeight: 600,
-                          cursor: 'pointer',
-                          fontSize: '0.85rem'
-                        }}
-                      >Super Vote</button>
+  onClick={(e) => {
+    const disabled =
+      !votingOpen ||
+      userVotes.superVotePostId !== null ||
+      userVotes.votePostId === post._id;
+
+    if (disabled) {
+      toast.info(
+        !votingOpen
+          ? 'Voting is currently closed.'
+          : userVotes.superVotePostId !== null
+          ? 'You have already used your super vote.'
+          : 'You cannot super vote a post you voted for.'
+      );
+      return;
+    }
+
+    vote(post._id, 'super-vote');
+  }}
+  style={{
+    background:
+      !votingOpen ||
+      userVotes.superVotePostId !== null ||
+      userVotes.votePostId === post._id
+        ? 'gray'
+        : 'linear-gradient(to right, rgb(219, 107, 28), orange)',
+    color: 'white',
+    padding: '6px 12px',
+    border: 'none',
+    borderRadius: 5,
+    fontWeight: 600,
+    cursor:
+      !votingOpen ||
+      userVotes.superVotePostId !== null ||
+      userVotes.votePostId === post._id
+        ? 'not-allowed'
+        : 'pointer',
+    fontSize: '0.85rem',
+    opacity:
+      !votingOpen ||
+      userVotes.superVotePostId !== null ||
+      userVotes.votePostId === post._id
+        ? 0.6
+        : 1,
+  }}
+>
+  Super Vote
+</button>
+
                     </>
                   )}
                   {isMyPost && <p style={{ fontWeight: 600, color: '#777' }}>(Your Post)</p>}
