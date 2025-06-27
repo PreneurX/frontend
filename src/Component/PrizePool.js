@@ -68,7 +68,7 @@ const PrizePool = () => {
       </h3>
       <div className="marquee-wrapper1 bg-gray-100 py-4" ref={seniorRef}></div>
 
-      <h3 className="text-2xl font-bold text-center mt-6 mb-2 text-[#616161]">
+      <h3 className="text-2xl font-bold text-center mt-3 mb-3 text-[#616161]">
         JUNIOR BLAZERS
       </h3>
       <div className="marquee-wrapper1 bg-gray-100 py-4" ref={juniorRef}></div>
@@ -88,7 +88,7 @@ const PrizePool = () => {
   onClick={() => {
     window.open("https://drive.google.com/uc?export=download&id=1AsLMl2fZvA2qurMzAg2ZH7OC0zjK5rIv", "_blank");
   }}
-  className="bg-[#083ca0] text-white font-semibold px-4 py-2 rounded-lg hover:bg-black hover:text-white transition-all duration-300"
+  className="bg-[#083ca0] text-white font-semibold px-4 py-2 rounded-lg hover:bg-black hover:text-white transition-all duration-300 mt-2 mb-2"
 >
   View Full Prize List
 </button>
