@@ -59,7 +59,7 @@ const PrizePool = () => {
 
   return (
     <div className="bg-white">
-      <h1 className="text-3xl sm:text-4xl font-bold text-center mt-4 text-transparent bg-clip-text fancy-gradient text-white">
+      <h1 className="text-3xl sm:text-4xl font-bold text-center mt-4 text-transparent bg-clip-text fancy-gradient text-white bg-gradient-to-r from-[#083ca0] to-black">
         PRENERUX TALENT CLASH WINNERS
       </h1>
 
