@@ -32,7 +32,7 @@ function Studentnav() {
         <div className="nav-links1">
  
   <Link to="/dashboard">Home</Link>
-<Link to="/classclash">Clash class</Link>
+<Link to="/classclash">Class Clash</Link>
 <Link to="/round2">School Showdown</Link>
 <Link to="/finale">PreneurX Talent-Clash</Link>
 <Link to="/rule">Rules</Link>
