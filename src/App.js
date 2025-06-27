@@ -13,7 +13,6 @@ import StudentDashboard from './Pages/StudentDashboard';
 import Voting from './Component/Voting';
 import ClassClash from './Pages/ClassClash';
 import Privacy from './Pages/Privacy';
-import Rules from './Component/Rules';
 import Finale from './Pages/Finale';
 import AdminSignup from './Pages/AdminSignup';
 import AdminLogin from './Pages/AdminLogin';
