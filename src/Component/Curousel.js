@@ -5,6 +5,7 @@ import './Curousel.css';
 function Curousel() {
     return (
         <div>
+        <hr/>
             <div className="mobile-carousel">
                 
                 <div className="carousel-option"><Link to="/">Home</Link></div>
