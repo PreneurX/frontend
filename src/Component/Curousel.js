@@ -10,7 +10,7 @@ function Curousel() {
                 <div className="carousel-option"><Link to="/">Home</Link></div>
                 <div className="carousel-option"><Link to="/">Prize Pool</Link></div>
                 <div className="carousel-option"><Link to="/rule">Rules</Link></div>
-                <div className="carousel-option"><Link to="/crownkeepers">Crown Keepers</Link></div>
+                
                 <div className="carousel-option"><Link to="/contact">Contact us</Link></div>
                 <div className="carousel-option"><Link to="/">Team</Link></div>
                 {/* <div className="carousel-option"><a href="#">Trending</a></div>
