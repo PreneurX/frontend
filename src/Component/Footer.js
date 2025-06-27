@@ -16,13 +16,13 @@ function Footer() {
 
         <div className="footer-links">
           <Link to="/">Home</Link> 
-          <Link to="/about">About us</Link>
+          <Link to="/about">About Us</Link>
           <Link to="/policy">Privacy Policy</Link>
 
 
         
           <Link to="/terms">Terms & Condition</Link> 
-          <Link to="/contact">Contact us</Link>
+          <Link to="/contact">Contact Us</Link>
 
 
         </div>
