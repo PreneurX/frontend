@@ -56,7 +56,7 @@ function App() {
           </PrivateStudentRoute>
         } />
         <Route path="/policy" element={<Privacy />} />
-        <Route path="/rules" element={<Rules />} />
+        <Route path="/rules" element={<Rule />} />
         <Route path="/round2" element={
           <PrivateStudentRoute>
             <SchoolShowdown/>
