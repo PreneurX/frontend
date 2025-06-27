@@ -50,7 +50,7 @@ const studentId = student1?._id;console.log(studentId);
         WebkitTextFillColor: 'transparent',
       },
       p: {
-        margin: -5,
+        marginTop: -5,
         fontSize: '16px',
         fontWeight: 'bolder',
         color: '#515151',
