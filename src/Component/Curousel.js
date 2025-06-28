@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import './Curousel.css';
 function Curousel() {
     return (
-        <div>
+        <div className='abc'>
         <hr/>
         
             <div className="mobile-carousel">
