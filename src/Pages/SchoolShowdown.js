@@ -6,6 +6,8 @@ import axios from 'axios';
 import Studentnav from '../Component/Studentnav';
 import Loading from '../Component/Loading';
 import { Link } from "react-router-dom";
+import { toast } from 'react-toastify';
+
 
 
 function SchoolShowdown() {
