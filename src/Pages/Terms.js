@@ -11,7 +11,7 @@ function Terms() {
         <>
         <Navbar/>
       <header className="header">
-        <h1>Terms and Conditions</h1>
+        <h1>Terms & Conditions</h1>
       </header>
 
       <div className="container1">
