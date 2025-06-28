@@ -4,11 +4,10 @@ import search from '../assets/search.png';
 import { useAuth } from '../Context/Context';
 import axios from 'axios';
 import Studentnav from './Studentnav';
-import { Link } from "react-router-dom";
-import { toast } from 'react-toastify';
-
 import Footer from './Footer';
 import Loading from './Loading';
+import { toast } from 'react-toastify';
+
 
 function Voting() {
   const { user } = useAuth();
@@ -149,11 +148,11 @@ function Voting() {
 
       <div className="navbar1" style={{ background: '#f5f8fa', margin: '0px', padding: '0px' }}>
         <div className="nav-links1">
-          <Link to="/dashboard">Home</Link>
-          <Link to="/classclash">Class Clash</Link>
-          <Link to="/round2">School Showdown</Link>
-          <Link to="/finale">PreneurX Talent Clash</Link>
-          <Link to="/rule">Rules</Link>
+          <a href="/dashboard">Home</a>
+          <a href="/classclash">Class Clash</a>
+          <a href="/round2">School Showdown</a>
+          <a href="/finale">PreneurX Talent Clash</a>
+          <a href="/rules">Rules</a>
         </div>
       </div>
 
@@ -190,107 +189,109 @@ function Voting() {
                     )}
                   </p>
                   {!isMyPost && (
-                   <>
+                    <>
                       <button
-  onClick={(e) => {
-    const disabled =
-      !votingOpen ||
-      userVotes.votePostId !== null ||
-      userVotes.superVotePostId === post._id;
+                        onClick={(e) => {
+                          const disabled =
+                            !votingOpen ||
+                            userVotes.votePostId !== null ||
+                            userVotes.superVotePostId === post._id;
 
-    if (disabled) {
-      toast.info(
-        !votingOpen
-          ? 'Voting is currently closed.'
-          : userVotes.votePostId !== null
-          ? 'You have already cast your vote.'
-          : 'You cannot vote for a post you super voted for.'
-      );
-      return;
-    }
+                          if (disabled) {
+                            toast.info(
+                              !votingOpen
+                                ? 'Voting is currently closed.'
+                                : userVotes.votePostId !== null
+                                  ? 'You have already cast your vote.'
+                                  : 'You cannot vote for a post you super voted for.'
+                            );
+                            return;
+                          }
 
-    vote(post._id, 'vote');
-  }}
-  style={{
-    background:
-      !votingOpen ||
-      userVotes.votePostId !== null ||
-      userVotes.superVotePostId === post._id
-        ? 'gray'
-        : 'linear-gradient(to right, #083ca0, black)',
-    color: 'white',
-    marginRight: 5,
-    padding: '6px 12px',
-    border: 'none',
-    borderRadius: 5,
-    fontWeight: 600,
-    cursor:
-      !votingOpen ||
-      userVotes.votePostId !== null ||
-      userVotes.superVotePostId === post._id
-        ? 'not-allowed'
-        : 'pointer',
-    fontSize: '0.85rem',
-    opacity:
-      !votingOpen ||
-      userVotes.votePostId !== null ||
-      userVotes.superVotePostId === post._id
-        ? 0.6
-        : 1,
-  }}
->
-  Vote
-</button>
+                          vote(post._id, 'vote');
+                        }}
+                        style={{
+                          background:
+                            !votingOpen ||
+                              userVotes.votePostId !== null ||
+                              userVotes.superVotePostId === post._id
+                              ? 'gray'
+                              : 'linear-gradient(to right, #083ca0, black)',
+                          color: 'white',
+                          marginRight: 5,
+                          padding: '6px 12px',
+                          border: 'none',
+                          borderRadius: 5,
+                          marginLeft: 6,
+                          fontWeight: 600,
+                          cursor:
+                            !votingOpen ||
+                              userVotes.votePostId !== null ||
+                              userVotes.superVotePostId === post._id
+                              ? 'not-allowed'
+                              : 'pointer',
+                          fontSize: '0.85rem',
+                          opacity:
+                            !votingOpen ||
+                              userVotes.votePostId !== null ||
+                              userVotes.superVotePostId === post._id
+                              ? 0.6
+                              : 1,
+                        }}
+                      >
+                        Vote
+                      </button>
 
                       <button
-  onClick={(e) => {
-    const disabled =
-      !votingOpen ||
-      userVotes.superVotePostId !== null ||
-      userVotes.votePostId === post._id;
+                        onClick={(e) => {
+                          const disabled =
+                            !votingOpen ||
+                            userVotes.superVotePostId !== null ||
+                            userVotes.votePostId === post._id;
 
-    if (disabled) {
-      toast.info(
-        !votingOpen
-          ? 'Voting is currently closed.'
-          : userVotes.superVotePostId !== null
-          ? 'You have already used your super vote.'
-          : 'You cannot super vote a post you voted for.'
-      );
-      return;
-    }
+                          if (disabled) {
+                            toast.info(
+                              !votingOpen
+                                ? 'Voting is currently closed.'
+                                : userVotes.superVotePostId !== null
+                                  ? 'You have already used your super vote.'
+                                  : 'You cannot super vote a post you voted for.'
+                            );
+                            return;
+                          }
 
-    vote(post._id, 'super-vote');
-  }}
-  style={{
-    background:
-      !votingOpen ||
-      userVotes.superVotePostId !== null ||
-      userVotes.votePostId === post._id
-        ? 'gray'
-        : 'linear-gradient(to right, rgb(219, 107, 28), orange)',
-    color: 'white',
-    padding: '6px 12px',
-    border: 'none',
-    borderRadius: 5,
-    fontWeight: 600,
-    cursor:
-      !votingOpen ||
-      userVotes.superVotePostId !== null ||
-      userVotes.votePostId === post._id
-        ? 'not-allowed'
-        : 'pointer',
-    fontSize: '0.85rem',
-    opacity:
-      !votingOpen ||
-      userVotes.superVotePostId !== null ||
-      userVotes.votePostId === post._id
-        ? 0.6
-        : 1,
-  }}
->
-  Super Vote
-</button>
+                          vote(post._id, 'super-vote');
+                        }}
+                        style={{
+                          background:
+                            !votingOpen ||
+                              userVotes.superVotePostId !== null ||
+                              userVotes.votePostId === post._id
+                              ? 'gray'
+                              : 'linear-gradient(to right, rgb(219, 107, 28), orange)',
+                          color: 'white',
+                          padding: '6px 12px',
+                          marginLeft: 8,
+                          border: 'none',
+                          borderRadius: 5,
+                          fontWeight: 600,
+                          cursor:
+                            !votingOpen ||
+                              userVotes.superVotePostId !== null ||
+                              userVotes.votePostId === post._id
+                              ? 'not-allowed'
+                              : 'pointer',
+                          fontSize: '0.85rem',
+                          opacity:
+                            !votingOpen ||
+                              userVotes.superVotePostId !== null ||
+                              userVotes.votePostId === post._id
+                              ? 0.6
+                              : 1,
+                        }}
+                      >
+                        Super Vote
+                      </button>
 
                     </>
                   )}
