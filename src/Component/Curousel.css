@@ -12,6 +12,9 @@
     -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  
   }
+.abc{
+     display: none;
+}
   
   .carousel-option {
     display: inline-block;
@@ -41,5 +44,9 @@
     .mobile-carousel {
       display: flex;
     }
+      .abc {
+      display: flex;
+    }
+      
   }
   
