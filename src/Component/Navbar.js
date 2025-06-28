@@ -20,11 +20,20 @@ function Navbar() {
             </div>
 
             <nav className="nav-links">
-                <Link to="/">Home</Link>
-                <Link to="/">Prize Pool</Link>
-                <Link to="/rule">Rules</Link>
-                <Link to="/contact">Contact Us</Link>
-            </nav>
+                 <Link to="/">Home</Link>
+            <a
+              href="https://drive.google.com/uc?export=download&id=1AsLMl2fZvA2qurMzAg2ZH7OC0zjK5rIv"
+              target="_blank"
+              rel="noopener noreferrer"
+              download
+             >
+               Prize Pool
+             </a>
+
+              <Link to="/rule">Rules</Link>
+              <Link to="/contact">Contact Us</Link>
+               </nav>
+
 
             <div className="right-section">
                 <button onClick={handleSubmit} className='login-btn'>Login</button>
