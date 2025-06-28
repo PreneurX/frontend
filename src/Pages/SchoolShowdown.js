@@ -138,7 +138,7 @@ function SchoolShowdown() {
               fontSize: '15px',
               backgroundSize: '18px 18px',
               width: '100%',
-              fontVariantCaps: 'pettie-caps'
+              fontVariantCaps: 'petite-caps'
             }}
           />
         </div>
