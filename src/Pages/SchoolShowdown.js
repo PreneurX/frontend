@@ -39,7 +39,7 @@ function SchoolShowdown() {
         const [postsRes, roundRes, voteRes] = await Promise.all([
   axios.get(`https://backend-gpe5.onrender.com/api/student/round2-posts/${user.school}/${getCategory(user.classLevel)}`),
   axios.get(`https://backend-gpe5.onrender.com/api/rounds/school/${user.school}`),
-  axios.get(`https://backend-gpe5.onrender.com/api/student/vote-status/${user._id}/2`),
+  axios.get(`https://backend-gpe5.onrender.com/api/student/vote-status/${user._id}/1`),
 ]);
 
 
