@@ -8,7 +8,7 @@ function Curousel() {
         <hr/>
         
             <div className="mobile-carousel">
-        <hr/>
+       
         
                 
                 <div className="carousel-option"><Link to="/">Home</Link></div>
@@ -19,7 +19,7 @@ function Curousel() {
                 <div className="carousel-option"><Link to="/">Team</Link></div>
                 {/* <div className="carousel-option"><a href="#">Trending</a></div>
                 <div className="carousel-option"><a href="#">Trending</a></div>  */}
-        <hr/>
+       
 
             </div>
         <hr/>
