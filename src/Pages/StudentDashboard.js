@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Studentnav from '../Component/Studentnav';
-import Footer from '../Component.Footer';
+import Footer from '../Component/Footer'
 
 function StudentDashboard() {
   // const [dropdownVisible, setDropdownVisible] = useState(false);
