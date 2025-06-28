@@ -21,7 +21,7 @@ function Footer() {
 
 
         
-          <Link to="/terms">Terms & Condition</Link> 
+          <Link to="/terms">Terms & Conditions</Link> 
           <Link to="/contact">Contact Us</Link>
 
 
