@@ -27,7 +27,7 @@ function SchoolShowdown() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
   const getCategory = (classLevel) => {
-  return classLevel === 7 || classLevel === 8 ? "junior" : "senior";
+  return classLevel === "seventh" || classLevel === "eighth" ? "junior" : "senior";
 };
 
 
