@@ -5,6 +5,7 @@ import './Curousel.css';
 function Curousel() {
     return (
         <div>
+        <hr/>
         
             <div className="mobile-carousel">
         <hr/>
@@ -21,6 +22,7 @@ function Curousel() {
         <hr/>
 
             </div>
+        <hr/>
 
         </div>
     )
