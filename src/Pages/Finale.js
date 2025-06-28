@@ -129,6 +129,7 @@ function Finale() {
               fontSize: '15px',
               backgroundSize: '18px 18px',
               width: '100%',
+fontVariantCaps: 'petite-caps'
             }}
           />
         </div>
