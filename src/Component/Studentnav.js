@@ -18,7 +18,9 @@ function Studentnav() {
   return (
     <div>
       <div className="header1">
-        <img src={logo} alt="Company Logo" className="logo" />
+        <Link to="/">
+        <img src={logo} alt="PreneurX" className="logo" />
+        </Link>
         <div className="hamburger" onClick={() => setDropdownVisible(!dropdownVisible)}>
           <span></span>
           <span></span>
