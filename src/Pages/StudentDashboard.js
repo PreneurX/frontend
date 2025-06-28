@@ -203,7 +203,7 @@ const studentId = student1?._id;console.log(studentId);
       bottom: 0,
       left: 0,
       width: "100%",
-      backgroundColor: "#222",
+      backgroundColor: "#121212",
       color: "#fff",
       textAlign: "center",
       padding: "15px 0",
