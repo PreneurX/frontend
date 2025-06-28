@@ -41,7 +41,10 @@ function SchoolShowdown() {
   axios.get(`https://backend-gpe5.onrender.com/api/rounds/school/${user.school}`),
   axios.get(`https://backend-gpe5.onrender.com/api/student/vote-status/${user._id}/1`),
 ]);
-
+console.log(postsRes);
+        console.log(roundRes);
+        console.log(user);
+        console.log(user.classLevel);
 
         setPosts(postsRes.data);
         const myPost = postsRes.data.find(p => p.studentId._id === user._id);
