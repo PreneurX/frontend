@@ -7,6 +7,7 @@ function Curousel() {
         <div>
         
             <div className="mobile-carousel">
+        <hr/>
         
                 
                 <div className="carousel-option"><Link to="/">Home</Link></div>
