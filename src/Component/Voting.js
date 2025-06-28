@@ -150,7 +150,7 @@ function Voting() {
 
       <div className="navbar1" style={{ background: '#f5f8fa', margin: '0px', padding: '0px' }}>
         <div className="nav-links1">
-            <Link to="/dashboard">Home</Link>
+            <Link to="/dashboard">Profile</Link>
           <Link to="/classclash">Class Clash</Link>
           <Link to="/round2">School Showdown</Link>
           <Link to="/finale">PreneurX Talent Clash</Link>
