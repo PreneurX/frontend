@@ -34,7 +34,7 @@ function Finale() {
         if (!user || !user.school) return;
 
         // Determine category based on user's class
-const category = user.classLevel === 7 || user.classLevel === 8 ? "junior" : "senior";
+const category = user.classLevel === "seventh" || user.classLevel === "eighth" ? "junior" : "senior";
 
 const [postsRes, roundRes, voteRes] = await Promise.all([
   axios.get(`https://backend-gpe5.onrender.com/api/student/finale-posts/${category}`),
