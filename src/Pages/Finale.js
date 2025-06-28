@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import logo from '../assets/logo.png';
-import search from '../assets/search.png';
 import { useAuth } from '../Context/Context';
 import axios from 'axios';
 import Studentnav from '../Component/Studentnav';
