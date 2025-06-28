@@ -3,6 +3,8 @@ import Home from './Pages/Home';
 import Terms from './Pages/Terms';
 import Login from "./Pages/Login";
 import { Routes, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -37,6 +39,16 @@ import CrownKeepers from './Pages/CrownKeepers';
 
 function App() {
   return (
+    <>
+    <ToastContainer 
+        position="top-center"
+        autoClose={2500}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        pauseOnHover
+        theme="colored" // or "dark"
+      />
     <AuthProvider>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -99,6 +111,7 @@ function App() {
 
       </Routes>
     </AuthProvider>
+          </>
 
   );
 }
