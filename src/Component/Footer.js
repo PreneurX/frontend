@@ -10,8 +10,9 @@ function Footer() {
     <div className='footer'>
       <div className="footer-container">
         <div className="footer-brand">
-          <img src={logo} alt="PreneurX Logo" />
-        </div>
+<Link to="/">
+        <img src={logo} alt="Company Logo" className="logo" />
+        </Link>        </div>
         {/* <Logo/> */}
 
         <div className="footer-links">
