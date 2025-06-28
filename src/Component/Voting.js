@@ -112,8 +112,9 @@ function Voting() {
   return (
     <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', background: '#f5f8fa', color: '#333', margin: 0 }}>
       <header style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 20px', background: 'white', position: 'sticky', top: 0, zIndex: 1000 }}>
+<Link to="/">
         <img src={logo} alt="Company Logo" className="logo" />
-
+        </Link>
         <div style={{ position: 'relative', flex: 1, maxWidth: `${50 * width / 100}px`, fontVariantCaps: 'pettie-caps' }}>
           <img
             src={search}
