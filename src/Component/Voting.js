@@ -140,7 +140,7 @@ function Voting() {
               background: 'url(search.png) no-repeat left 10px center',
               backgroundSize: '18px 18px',
               width: '100%',
-              fontVariantCaps: 'pettie-caps'
+              fontVariantCaps: 'petite-caps'
             }}
           />
         </div>
