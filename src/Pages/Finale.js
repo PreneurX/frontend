@@ -138,8 +138,8 @@ function Finale() {
 
       <div className="navbar1" style={{ background: '#f5f8fa', margin: '0px', padding: '0px' }}>
         <div className="nav-links1">
-          <Link to="/dashboard">Home</Link>
-          <Link to="/classclash">Class Clash</Link>
+          <Link to="/dashboard">PROFILE</Link>
+          <Link to="/classclash">CLASS CLASH</Link>
           <Link to="/round2">School Showdown</Link>
           <Link to="/finale">PreneurX Talent Clash</Link>
           <Link to="/rule">Rules</Link>
