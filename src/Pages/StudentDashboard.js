@@ -143,6 +143,7 @@ const studentId = student1?._id;console.log(studentId);
   };
 
   return (
+    <>
     <div style={styles.body}>
       <Studentnav />
 
@@ -196,6 +197,8 @@ const studentId = student1?._id;console.log(studentId);
         )} 
       </div>
     </div>
+          <Footer/>
+          </>
   );
 }
 
