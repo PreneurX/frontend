@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import logo from '../assets/logo.png';
+import search from '../assets/search.png';
 import { useAuth } from '../Context/Context';
 import axios from 'axios';
 import Studentnav from '../Component/Studentnav';
@@ -117,11 +118,11 @@ const [postsRes, roundRes, voteRes] = await Promise.all([
   return (
     <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', background: '#f5f8fa', color: '#333', margin: 0 }}>
       <header style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 20px', background: 'white', position: 'sticky', top: 0, zIndex: 1000 }}>
-        <img src={logo} alt="Company Logo" className="logo" />
+        <Link to="/"><img src={logo} alt="Company Logo" className="logo" /> </Link>  
         <div style={{ position: 'relative', flex: 1, maxWidth: `${50 * width / 100}px` }}>
-<Link to="/">
-        <img src={logo} alt="Company Logo" className="logo" />
-        </Link>          <input
+
+        <img src={search} alt="Company Logo" className="logo" />
+               <input
             type="text"
             placeholder="Search Preneurs"
             onChange={(e) => setSearchTerm(e.target.value)}
