@@ -33,11 +33,15 @@ function Finale() {
       try {
         if (!user || !user.school) return;
 
-        const [postsRes, roundRes, voteRes] = await Promise.all([
-          axios.get(`https://backend-gpe5.onrender.com/api/student/finale-posts`),
-          axios.get(`https://backend-gpe5.onrender.com/api/rounds/school/${user.school}`),
-          axios.get(`https://backend-gpe5.onrender.com/api/student/vote-status/${user._id}/3`)
-        ]);
+        // Determine category based on user's class
+const category = user.classLevel === 7 || user.classLevel === 8 ? "junior" : "senior";
+
+const [postsRes, roundRes, voteRes] = await Promise.all([
+  axios.get(`https://backend-gpe5.onrender.com/api/student/finale-posts/${category}`),
+  axios.get(`https://backend-gpe5.onrender.com/api/rounds/school/${user.school}`),
+  axios.get(`https://backend-gpe5.onrender.com/api/student/vote-status/${user._id}/3`)
+]);
+
 
         setPosts(postsRes.data);
         const myPost = postsRes.data.find(p => p.studentId._id === user._id);
