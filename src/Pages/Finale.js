@@ -120,8 +120,9 @@ const [postsRes, roundRes, voteRes] = await Promise.all([
       <header style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 20px', background: 'white', position: 'sticky', top: 0, zIndex: 1000 }}>
         <img src={logo} alt="Company Logo" className="logo" />
         <div style={{ position: 'relative', flex: 1, maxWidth: `${50 * width / 100}px` }}>
-          <img src={search} alt="logo" style={{ position: 'absolute', top: '50%', left: '10px', transform: 'translateY(-50%)', height: '20px', width: '20px' }} />
-          <input
+<Link to="/">
+        <img src={logo} alt="Company Logo" className="logo" />
+        </Link>          <input
             type="text"
             placeholder="Search Preneurs"
             onChange={(e) => setSearchTerm(e.target.value)}
