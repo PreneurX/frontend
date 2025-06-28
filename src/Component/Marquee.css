@@ -26,7 +26,7 @@ body {
     }
 
     .marquee-content span {
-      margin: 0 1.5rem;
+      margin: 0px;
       font-size: 2rem;
       font-weight: 700;
     }
@@ -43,7 +43,7 @@ body {
     }
 
     .marquee-content-alt span {
-      margin: 0 1.5rem;
+      margin: 0px;
       font-size: 2rem;
       font-weight: 700;
     }
