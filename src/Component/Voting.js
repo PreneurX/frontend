@@ -7,6 +7,8 @@ import Studentnav from './Studentnav';
 import Footer from './Footer';
 import Loading from './Loading';
 import { toast } from 'react-toastify';
+import { Link } from "react-router-dom";
+
 
 
 function Voting() {
@@ -148,11 +150,11 @@ function Voting() {
 
       <div className="navbar1" style={{ background: '#f5f8fa', margin: '0px', padding: '0px' }}>
         <div className="nav-links1">
-          <a href="/dashboard">Home</a>
-          <a href="/classclash">Class Clash</a>
-          <a href="/round2">School Showdown</a>
-          <a href="/finale">PreneurX Talent Clash</a>
-          <a href="/rules">Rules</a>
+            <Link to="/dashboard">Home</Link>
+          <Link to="/classclash">Class Clash</Link>
+          <Link to="/round2">School Showdown</Link>
+          <Link to="/finale">PreneurX Talent Clash</Link>
+          <Link to="/rule">Rules</Link>
         </div>
       </div>
 
