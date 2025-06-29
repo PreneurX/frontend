@@ -159,11 +159,15 @@ const studentId = student1?._id;console.log(studentId);
         {!posted && (
           <div style={styles.uploadBox}>
             <textarea
-              placeholder="Your story, your glory – let’s hear it!"
-              style={styles.textarea}
-              value={post}
-              onChange={(e) => setPost(e.target.value)}
-            />
+  placeholder="Your story, your glory – let’s hear it!"
+  style={{
+    ...styles.textarea,
+    fontFamily: "'Letter Mono Variable', monospace"
+  }}
+  value={post}
+  onChange={(e) => setPost(e.target.value)}
+/>
+
             <button style={styles.button} onClick={handlePostSubmit}>
               Post
             </button>
