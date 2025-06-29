@@ -238,7 +238,7 @@ function Voting() {
                           padding: '6px 12px',
                           border: 'none',
                           borderRadius: 5,
-                          marginLeft: 6,
+                          
                           fontWeight: 600,
                           cursor:
                             !votingOpen ||
