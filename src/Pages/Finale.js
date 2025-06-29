@@ -293,9 +293,7 @@ fontVariantCaps: 'petite-caps'
           })}
         </div>
       </main>
-      
       <Footer/>
-    </div>
     </div>
   );
 }
