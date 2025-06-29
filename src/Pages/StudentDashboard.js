@@ -202,19 +202,21 @@ const studentId = student1?._id;console.log(studentId);
       </div>
     </div>
           
-          <div style={{
-      position: "fixed",
-      bottom: 0,
-      left: 0,
-      width: "100%",
-      backgroundColor: "#121212",
-      color: "#fff",
-      textAlign: "center",
-      padding: "15px 0",
-      zIndex: 100
-    }}>
-      <Footer/>
-    </div>
+           <div style={{ display: 'flex', flexDirection: 'column', minHeight: '58vh' }}>
+  <main style={{ flex: 1 }}>
+    {/* Your page content here */}
+  </main>
+
+  <footer style={{
+    width: 'auto',
+    backgroundColor: '#121212',
+    color: '#fff',
+    textAlign: 'center',
+    padding: ' 0'
+  }}>
+    <Footer />
+  </footer>
+</div>
           </>
   );
 }
