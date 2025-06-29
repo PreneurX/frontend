@@ -3,28 +3,27 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 const Loading = () => {
   useEffect(() => {
-    // Simulate loading complete after full page load
     window.addEventListener("load", () => {
       document.body.classList.add("loaded");
     });
   }, []);
 
   return (
-    <>
-      {/* Preloader */}
+    <div style={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      height: '100vh',
+      width: '100vw',
+      backgroundColor: '#fff', // optional: white background while loading
+    }}>
       <DotLottieReact
-      src="https://lottie.host/61ab2c58-b4d6-45f1-b2c8-a4f17a341d8d/Clq2lMc5mV.lottie"
-      loop
-      autoplay
-    />
-
-
-      {/* Main Content */}
-      
-
-      {/* Styles */}
-     
-    </>
+        src="https://lottie.host/61ab2c58-b4d6-45f1-b2c8-a4f17a341d8d/Clq2lMc5mV.lottie"
+        loop
+        autoplay
+        style={{ width: '300px', height: '300px' }} // control size
+      />
+    </div>
   );
 };
 
