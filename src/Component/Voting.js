@@ -9,6 +9,8 @@ import Loading from './Loading';
 import { toast } from 'react-toastify';
 import { Link } from "react-router-dom";
 
+
+
 function Voting() {
   const { user } = useAuth();
   const [width, setWidth] = useState(window.innerWidth);
@@ -110,8 +112,8 @@ function Voting() {
   return (
     <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', background: '#f5f8fa', color: '#333', margin: 0 }}>
       <header style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 20px', background: 'white', position: 'sticky', top: 0, zIndex: 1000 }}>
-        <Link to="/">
-          <img src={logo} alt="Company Logo" className="logo" />
+<Link to="/">
+        <img src={logo} alt="Company Logo" className="logo" />
         </Link>
         <div style={{ position: 'relative', flex: 1, maxWidth: `${50 * width / 100}px`, fontVariantCaps: 'pettie-caps' }}>
           <img
@@ -149,7 +151,7 @@ function Voting() {
 
       <div className="navbar1" style={{ background: '#f5f8fa', margin: '0px', padding: '0px' }}>
         <div className="nav-links1">
-          <Link to="/dashboard">Profile</Link>
+            <Link to="/dashboard">Profile</Link>
           <Link to="/classclash">Class Clash</Link>
           <Link to="/round2">School Showdown</Link>
           <Link to="/finale">PreneurX Talent Clash</Link>
@@ -160,10 +162,10 @@ function Voting() {
       <hr />
 
       <main style={{ maxWidth: 1000, margin: '0 auto', padding: 0 }}>
-        <h1 style={{ textAlign: 'center', lineHeight: '1.1', fontSize: '1.8rem', fontWeight: 700, background: 'linear-gradient(to right, #083ca0, black)', WebkitBackgroundClip: 'text', color: 'transparent' }}>
+        <h1 style={{ textAlign: 'center', lineHeight: '1.1',fontSize: '1.8rem', fontWeight: 700, background: 'linear-gradient(to right, #083ca0, black)', WebkitBackgroundClip: 'text', color: 'transparent' }}>
           ROUND-1<br />Class Clash
         </h1>
-        <p style={{ textAlign: 'center', fontSize: '1rem', marginBottom: 16 }}>Vote for your favorite classmate!<br /> Top 50% advance to the next round.<br /> <strong>You cannot change your vote once it has been cast.</strong></p>
+        <p style={{ textAlign: 'center', fontSize: '1rem', marginBottom: 16 }}>Vote for your favorite classmate!<br/> Top 50% advance to the next round.<br/> <strong>You cannot change your vote once it has been cast.</strong></p>
 
         <div style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', margin: '10px', gap: '20px' }}>
           {filteredStudents.map(post => {
@@ -173,32 +175,164 @@ function Voting() {
             const isMyPost = post._id === myPostId;
 
             return (
-              <div key={post._id} style={{ background: 'white', padding: 15, borderRadius: 10, boxShadow: '0 2px 5px rgba(0,0,0,0.1)', margin: '20px' }}>
-                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                  <img src={post.studentId.profilePic} alt={post.studentId.name} style={{ width: 50, height: 50, objectFit: 'cover', borderRadius: '50%' }} />
-                  <div>
-                    <h3 style={{ margin: 0, fontSize: 18, background: 'linear-gradient(to right, #083ca0, black)', WebkitBackgroundClip: 'text', color: 'transparent', marginBottom: '-6px' }}>{post.studentId.name}</h3>
-                    <p style={{ margin: 0, fontSize: 16, fontWeight: 200, color: '#515151' }}>{post.studentId.school}</p>
-                  </div>
-                </div>
-                <p style={{ fontSize: '0.85rem', marginTop: 8, color: '#515151', lineHeight: 1.4, fontFamily: 'Letter Mono Variable, monospace', fontWeight: 100, textAlign: 'left' }}>
-                  {isLong ? (isExpanded ? post.content : shortText) : post.content}
-                  {isLong && (
-                    <span
-                      onClick={() => toggleEntry(post._id)}
-                      style={{ color: '#083ca0', fontWeight: 600, cursor: 'pointer', marginLeft: 5 }}
-                    >
-                      {isExpanded ? 'Show Less' : 'Read More'}
-                    </span>
+              <div key={post._id} style={{ background: 'white', padding: 15, borderRadius: 10, boxShadow: '0 2px 5px rgba(0,0,0,0.1)', display: 'flex', alignItems: 'flex-start', gap: '12px', margin: '20px' }}>
+                <img src={post.studentId.profilePic} alt={post.studentId.name} style={{ width: 50, height: 50, objectFit: 'cover', borderRadius: '50%' }} />
+                <div style={{ flex: 1 }}>
+                  <h3 style={{ margin: 0, fontSize: 18, background: 'linear-gradient(to right, #083ca0, black)', WebkitBackgroundClip: 'text', color: 'transparent', marginBottom: '-6px' }}>{post.studentId.name}</h3>
+                  <p style={{ margin: 0, fontSize: 16, fontWeight: 200, color: '#515151' }}>{post.studentId.school}</p>
+              
+                  <p style={{ fontSize: '0.85rem', marginTop: 8, color: '#515151', lineHeight: 1.4, fontFamily: 'Letter Mono Variable, monospace', fontWeight: 100   }}>
+                    {isLong ? (isExpanded ? post.content : shortText) : post.content}
+                    {isLong && (
+                      <span
+                        onClick={() => toggleEntry(post._id)}
+                        style={{ color: '#083ca0', fontWeight: 600, cursor: 'pointer', marginLeft: 5 }}
+                      >
+                        {isExpanded ? 'Show Less' : 'Read More'}
+                      </span>
+                    )}
+                  </p>
+                  {!isMyPost && (
+                    <>
+                      <button
+                        onClick={(e) => {
+                          const disabled =
+                            !votingOpen ||
+                            userVotes.votePostId !== null ||
+                            userVotes.superVotePostId === post._id;
+
+                          if (disabled) {
+  toast.info(
+    !votingOpen
+      ? 'Voting is currently closed.'
+      : userVotes.votePostId !== null
+        ? 'Your vote has been recorded and cannot be changed.'
+        : 'You cannot vote for a post you super voted for.',
+    {
+      style: {
+        background: 'linear-gradient(to right,black,  #083ca0)',
+        color: '#fff',
+        fontWeight: 'bold',
+        borderRadius: '6px',
+        padding: '12px 16px',
+      },
+      progressStyle: {
+        background: 'orange',
+      }
+    }
+  );
+  return;
+}
+
+
+                          vote(post._id, 'vote');
+                        }}
+                        style={{
+                          background:
+                            !votingOpen ||
+                              userVotes.votePostId !== null ||
+                              userVotes.superVotePostId === post._id
+                              ? 'gray'
+                              : 'linear-gradient(to right, #083ca0, black)',
+                          color: 'white',
+                          marginRight: 5,
+                          padding: '6px 12px',
+                          border: 'none',
+                          borderRadius: 5,
+                          marginTop: 8,
+                          fontWeight: 600,
+                          cursor:
+                            !votingOpen ||
+                              userVotes.votePostId !== null ||
+                              userVotes.superVotePostId === post._id
+                              ? 'not-allowed'
+                              : 'pointer',
+                          fontSize: '0.85rem',
+                          opacity:
+                            !votingOpen ||
+                              userVotes.votePostId !== null ||
+                              userVotes.superVotePostId === post._id
+                              ? 0.6
+                              : 1,
+                        }}
+                      >
+                        Vote
+                      </button>
+
+                      <button
+                        onClick={(e) => {
+                          const disabled =
+                            !votingOpen ||
+                            userVotes.superVotePostId !== null ||
+                            userVotes.votePostId === post._id;
+
+                          if (disabled) {
+  toast.info(
+    !votingOpen
+      ? 'Voting is currently closed.'
+      : userVotes.superVotePostId !== null
+        ? 'You have already used your super vote.'
+        : 'You cannot super vote a post you voted for.',
+    {
+      style: {
+        background: 'linear-gradient(to right, black, #083ca0)',
+        color: '#fff',
+        fontWeight: 'bold',
+        borderRadius: '6px',
+      },
+      progressStyle: {
+        background: 'orange',
+      }
+    }
+  );
+  return;
+}
+
+
+                          vote(post._id, 'super-vote');
+                        }}
+                        style={{
+                          background:
+                            !votingOpen ||
+                              userVotes.superVotePostId !== null ||
+                              userVotes.votePostId === post._id
+                              ? 'gray'
+                              : 'linear-gradient(to right, rgb(219, 107, 28), orange)',
+                          color: 'white',
+                          padding: '6px 12px',
+                          marginLeft: 8,
+                          border: 'none',
+                          borderRadius: 5,
+                          fontWeight: 600,
+                          cursor:
+                            !votingOpen ||
+                              userVotes.superVotePostId !== null ||
+                              userVotes.votePostId === post._id
+                              ? 'not-allowed'
+                              : 'pointer',
+                          fontSize: '0.85rem',
+                          opacity:
+                            !votingOpen ||
+                              userVotes.superVotePostId !== null ||
+                              userVotes.votePostId === post._id
+                              ? 0.6
+                              : 1,
+                        }}
+                      >
+                        Super Vote
+                      </button>
+
+                    </>
                   )}
-                </p>
-                {isMyPost && <p style={{ fontWeight: 600, color: '#777' }}>(Your Post)</p>}
+                  {isMyPost && <p style={{ fontWeight: 600, color: '#777' }}>(Your Post)</p>}
+                </div>
               </div>
             );
           })}
         </div>
       </main>
       <Footer />
+
     </div>
   );
 }
