@@ -7,6 +7,8 @@ import Studentnav from '../Component/Studentnav';
 import Loading from '../Component/Loading';
 import { Link } from "react-router-dom";
 import { toast } from 'react-toastify';
+import Footer from '../Component/Footer';
+
 
 
 
@@ -310,6 +312,7 @@ console.log(postsRes);
           })}
         </div>
       </main>
+<Footer/>
     </div>
   );
 }
