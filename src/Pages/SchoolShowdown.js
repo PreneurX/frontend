@@ -312,7 +312,19 @@ console.log(postsRes);
           })}
         </div>
       </main>
-<Footer/>
+<div style={{
+      position: "fixed",
+      bottom: 0,
+      left: 0,
+      width: "100%",
+      backgroundColor: "#121212",
+      color: "#fff",
+      textAlign: "center",
+      padding: "15px 0",
+      zIndex: 100
+    }}>
+      <Footer/>
+    </div>
     </div>
   );
 }
