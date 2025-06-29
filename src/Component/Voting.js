@@ -201,15 +201,28 @@ function Voting() {
                             userVotes.superVotePostId === post._id;
 
                           if (disabled) {
-                            toast.info(
-                              !votingOpen
-                                ? 'Voting is currently closed.'
-                                : userVotes.votePostId !== null
-                                  ? 'You have already cast your vote.'
-                                  : 'You cannot vote for a post you super voted for.'
-                            );
-                            return;
-                          }
+  toast.info(
+    !votingOpen
+      ? 'Voting is currently closed.'
+      : userVotes.votePostId !== null
+        ? 'You have already cast your vote.'
+        : 'You cannot vote for a post you super voted for.',
+    {
+      style: {
+        background: 'linear-gradient(to right,black,  #083ca0)',
+        color: '#fff',
+        fontWeight: 'bold',
+        borderRadius: '6px',
+        padding: '12px 16px',
+      },
+      progressStyle: {
+        background: 'orange',
+      }
+    }
+  );
+  return;
+}
+
 
                           vote(post._id, 'vote');
                         }}
@@ -253,15 +266,27 @@ function Voting() {
                             userVotes.votePostId === post._id;
 
                           if (disabled) {
-                            toast.info(
-                              !votingOpen
-                                ? 'Voting is currently closed.'
-                                : userVotes.superVotePostId !== null
-                                  ? 'You have already used your super vote.'
-                                  : 'You cannot super vote a post you voted for.'
-                            );
-                            return;
-                          }
+  toast.info(
+    !votingOpen
+      ? 'Voting is currently closed.'
+      : userVotes.superVotePostId !== null
+        ? 'You have already used your super vote.'
+        : 'You cannot super vote a post you voted for.',
+    {
+      style: {
+        background: 'linear-gradient(to right, black, #083ca0)',
+        color: '#fff',
+        fontWeight: 'bold',
+        borderRadius: '6px',
+      },
+      progressStyle: {
+        background: 'orange',
+      }
+    }
+  );
+  return;
+}
+
 
                           vote(post._id, 'super-vote');
                         }}
