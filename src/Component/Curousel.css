@@ -1,52 +1,53 @@
 /* Mobile Carousel Styles */
 .mobile-carousel {
-    display: none;
-    overflow-x: auto;
-    white-space: nowrap;
-    padding: 10px 12px;
-    gap: 10px;
-    background-color: #f9f9f9;
-
-
-
-    -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  
-  }
-.abc{
-     display: none;
+  display: none;
+  overflow-x: auto;
+  white-space: nowrap;
+  gap: 10px;
+  background-color:white;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;
 }
+
+.abc {
+  display: none;
+}
+
+/* Carousel option buttons */
+.carousel-option {
+  display: inline-block;
+  padding: 6px 8px;
+  border-radius: 0px;
+  font-size: 18.5px;
+  font-weight: 600;
+  margin-right: 10px;
+  cursor: pointer;
+  color: #0e1010;
+  font-family: 'Nunito';
   
-  .carousel-option {
-    display: inline-block;
-    padding: 6px 8px;
-    /* background-color: #e6e6e6; */
-    border-radius: 20px;
-    font-size:1rem;
-    font-weight: 500;
-    margin-right: 10px;
-    cursor: pointer;
-    color: #0e1010;
-    font-family: 'Nunito';
-    line-height: 1.4;
-    font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  color: #515151;
+}
+
+/* ✅ Show only on mobile and add border */
+@media (max-width: 768px) {
+  .abc {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-left: none;
+    border-right: none;
+    border-radius: 0; /* No corners, optional */
+    padding-left: 11px;
+    background-color: #fff;
   }
-  
-  /* .carousel-option:hover {
-    background-color: #d4d4d4;
-  } */
-   a{
-    text-decoration: none;
-    color: #515151;
-   }
-  
-  /* Show carousel ONLY on mobile */
-  @media (max-width: 768px) {
-    .mobile-carousel {
-      display: flex;
-    }
-      .abc {
-      display: flex;
-    }
-      
+
+  .mobile-carousel {
+    display: flex;
   }
-  
+}
+
