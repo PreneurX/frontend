@@ -3,7 +3,7 @@
   display: none;
   overflow-x: auto;
   white-space: nowrap;
-  gap: 9px;
+  gap: 6px;
   background-color:white;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;
