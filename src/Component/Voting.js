@@ -205,7 +205,7 @@ function Voting() {
     !votingOpen
       ? 'Voting is currently closed.'
       : userVotes.votePostId !== null
-        ? 'You have already cast your vote.'
+        ? 'Your vote has been recorded and cannot be changed.'
         : 'You cannot vote for a post you super voted for.',
     {
       style: {
