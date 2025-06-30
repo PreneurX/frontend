@@ -107,13 +107,40 @@ const [postsRes, roundRes, voteRes] = await Promise.all([
   if (loading) return <p><Loading /></p>;
 
   if (!votingOpen) return (
-    <>
-      <Studentnav />
-      <p style={{ textAlign: 'center', fontWeight: 'bold', color: 'red', marginTop: 30 }}>
-        Round not active
+  <>
+    <Studentnav />
+    <div style={{
+      height: '85vh',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'flex-start',
+      alignItems: 'center',
+      background: '#ffffff',
+      paddingTop: '80px',
+      textAlign: 'center',
+    }}>
+      <DotLottieReact
+        src="https://lottie.host/086e1eb5-8e39-43c8-9fa9-1c86c384ce5a/ZmwC0mRyj6.lottie"
+        loop
+        autoplay
+        style={{ width: 300, height: 300 }}
+      />
+      <h2 style={{
+        fontSize: '1.5rem',
+        fontFamily:'Plus Jakarta Sans',
+        marginTop: '20px',
+        background: 'linear-gradient(to right, #083ca0, black)',
+        WebkitBackgroundClip: 'text',
+        color: 'transparent'
+      }}>
+        Voting Round Not Active
+      </h2>
+      <p style={{ fontSize: '1rem', color: '#666', marginTop: '0px',fontFamily:'Nunito' }}>
+        Please come back later. Voting will open soon.
       </p>
-    </>
-  );
+    </div>
+  </>
+);
 
   return (
     <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', background: '#f5f8fa', color: '#333', margin: 0 }}>
