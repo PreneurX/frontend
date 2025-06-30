@@ -3,9 +3,13 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 const Loading = () => {
   useEffect(() => {
-    window.addEventListener("load", () => {
-      document.body.classList.add("loaded");
-    });
+    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = 'auto';
+      document.documentElement.style.overflow = 'auto';
+    };
   }, []);
 
   return (
@@ -15,13 +19,17 @@ const Loading = () => {
       justifyContent: 'center',
       height: '100vh',
       width: '100vw',
-      backgroundColor: '#fff', // optional: white background while loading
+      backgroundColor: '#fff',
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      zIndex: 9999
     }}>
       <DotLottieReact
         src="https://lottie.host/61ab2c58-b4d6-45f1-b2c8-a4f17a341d8d/Clq2lMc5mV.lottie"
         loop
         autoplay
-        style={{ width: '300px', height: '300px' }} // control size
+        style={{ width: '300px', height: '300px' }}
       />
     </div>
   );
