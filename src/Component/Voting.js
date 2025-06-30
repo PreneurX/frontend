@@ -8,6 +8,8 @@ import Footer from './Footer';
 import Loading from './Loading';
 import { toast } from 'react-toastify';
 import { Link } from "react-router-dom";
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+
 
 
 
