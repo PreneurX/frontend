@@ -129,6 +129,7 @@ const [postsRes, roundRes, voteRes] = await Promise.all([
       />
       <h2 style={{
         fontSize: '1.5rem',
+fontWeight:'600',
         fontFamily:'Plus Jakarta Sans',
         marginTop: '20px',
         background: 'linear-gradient(to right, #083ca0, black)',
