@@ -127,7 +127,9 @@ function Voting() {
         marginTop: '20px',
         background: 'linear-gradient(to right, #083ca0, black)',
         WebkitBackgroundClip: 'text',
-        color: 'transparent'
+        color: 'transparent',
+        fontWeight:'600'
+
       }}>
         Voting Round Not Active
       </h2>
