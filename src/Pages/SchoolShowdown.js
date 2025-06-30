@@ -135,9 +135,12 @@ console.log(postsRes);
         fontSize: '1.5rem',
         fontFamily:'Plus Jakarta Sans',
         marginTop: '20px',
+fontWeight:'600',
+
         background: 'linear-gradient(to right, #083ca0, black)',
         WebkitBackgroundClip: 'text',
         color: 'transparent'
+
       }}>
         Voting Round Not Active
       </h2>
