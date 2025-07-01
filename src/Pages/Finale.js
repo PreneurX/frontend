@@ -221,13 +221,25 @@ fontVariantCaps: 'petite-caps'
       userVotes.superVotePostId === post._id;
 
     if (disabled) {
-      toast.info(
-        !votingOpen
-          ? 'Voting is currently closed.'
-          : userVotes.votePostId !== null
-          ? 'You have already cast your vote.'
-          : 'You cannot vote for a post you super voted for.'
-      );
+       toast.info(
+          !votingOpen
+            ? 'Voting is currently closed.'
+            : userVotes.votePostId !== null
+              ? 'Your vote has been recorded and cannot be changed.'
+              : 'You cannot vote for a post you super voted for.',
+          {
+            style: {
+              background: 'linear-gradient(to right,black,  #083ca0)',
+              color: '#fff',
+              fontWeight: 'bold',
+              borderRadius: '6px',
+              padding: '12px 16px',
+            },
+            progressStyle: {
+              background: 'orange',
+            }
+          }
+        );
       return;
     }
 
@@ -275,12 +287,23 @@ fontVariantCaps: 'petite-caps'
 
     if (disabled) {
       toast.info(
-        !votingOpen
-          ? 'Voting is currently closed.'
-          : userVotes.superVotePostId !== null
-          ? 'You have already used your super vote.'
-          : 'You cannot super vote a post you voted for.'
-      );
+          !votingOpen
+            ? 'Voting is currently closed.'
+            : userVotes.superVotePostId !== null
+              ? 'You have already used your super vote.'
+              : 'You cannot super vote a post you voted for.',
+          {
+            style: {
+              background: 'linear-gradient(to right, black, #083ca0)',
+              color: '#fff',
+              fontWeight: 'bold',
+              borderRadius: '6px',
+            },
+            progressStyle: {
+              background: 'orange',
+            }
+          }
+        );
       return;
     }
 
@@ -296,6 +319,8 @@ fontVariantCaps: 'petite-caps'
     color: 'white',
     padding: '6px 12px',
     border: 'none',
+    marginLeft:8,
+
     borderRadius: 5,
     fontWeight: 600,
     cursor:
