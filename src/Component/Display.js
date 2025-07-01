@@ -14,7 +14,7 @@ function Display() {
             <pre>
                 <span className="gradient-subtext">VOTE    FOR    THE    BEST</span>
             </pre>
-            <span className="third-text">DISCOVER AND SUPPORT THE TALENT OF YOUR SCHOOL</span>
+<span style={{ fontWeight: '600' ,fontSize:'21px'}}>DISCOVER AND SUPPORT THE TALENT OF YOUR SCHOOL</span>
         </div>
     );
 }
