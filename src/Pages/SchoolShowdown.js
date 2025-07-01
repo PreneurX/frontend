@@ -23,6 +23,8 @@ function SchoolShowdown() {
   const [loading, setLoading] = useState(true);
   const [votingOpen, setVotingOpen] = useState(false);
   const [userVotes, setUserVotes] = useState({ votePostId: null, superVotePostId: null });
+  const [showLottie, setShowLottie] = useState(false);
+
 
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
@@ -65,41 +67,49 @@ console.log(postsRes);
   }, [user]);
 
   const vote = async (postId, type) => {
-    if (userVotes.votePostId === postId && type === 'super-vote') {
-      return alert("You can't super vote the same post you voted for.");
-    }
-    if (userVotes.superVotePostId === postId && type === 'vote') {
-      return alert("You can't vote the same post you super voted for.");
-    }
+  if (userVotes.votePostId === postId && type === 'super-vote') {
+    return alert("You can't super vote the same post you voted for.");
+  }
+  if (userVotes.superVotePostId === postId && type === 'vote') {
+    return alert("You can't vote the same post you super voted for.");
+  }
 
-    try {
-      await axios.post(`https://backend-gpe5.onrender.com/api/student/${type}`, {
-        postId,
-        studentId: user._id,
-        round: 2
-      });
+  try {
+    // 👇 Show animation instantly
+    setShowLottie(true);
 
-      setPosts(prev =>
-        prev.map(p =>
-          p._id === postId
-            ? {
-                ...p,
-                voteCount: type === "vote" ? p.voteCount + 1 : p.voteCount,
-                superVoteCount: type === "super-vote" ? p.superVoteCount + 1 : p.superVoteCount,
-              }
-            : p
-        )
-      );
+    await axios.post(`https://backend-gpe5.onrender.com/api/student/${type}`, {
+      postId,
+      studentId: user._id,
+      round: 2
+    });
 
-      setUserVotes(prev => ({
-        ...prev,
-        votePostId: type === "vote" ? postId : prev.votePostId,
-        superVotePostId: type === "super-vote" ? postId : prev.superVotePostId,
-      }));
-    } catch (err) {
-      alert("Error casting vote");
-    }
-  };
+    // 👇 Hide animation after 1.7s
+    setTimeout(() => setShowLottie(false), 1000);
+
+    setPosts(prev =>
+      prev.map(p =>
+        p._id === postId
+          ? {
+              ...p,
+              voteCount: type === "vote" ? p.voteCount + 1 : p.voteCount,
+              superVoteCount: type === "super-vote" ? p.superVoteCount + 1 : p.superVoteCount,
+            }
+          : p
+      )
+    );
+
+    setUserVotes(prev => ({
+      ...prev,
+      votePostId: type === "vote" ? postId : prev.votePostId,
+      superVotePostId: type === "super-vote" ? postId : prev.superVotePostId,
+    }));
+  } catch (err) {
+    setShowLottie(false); // hide animation on error too
+    alert("Error casting vote");
+  }
+};
+
 
   const toggleEntry = (id) => {
     setExpandedEntries(prev => ({ ...prev, [id]: !prev[id] }));
@@ -368,6 +378,27 @@ fontWeight:'600',
           })}
         </div>
       </main>
+{showLottie && (
+  <div style={{
+    position: 'fixed',
+    top: 0, left: 0,
+    width: '100vw',
+    height: '100vh',
+    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    zIndex: 9999,
+  }}>
+    <DotLottieReact
+      src="https://lottie.host/80f10271-575c-481f-9cc9-03a57d8ee395/1To76lViNr.lottie"
+      autoplay
+      loop={false}
+      speed={1}  // optional, you can remove or change this
+      style={{ width: 220, height: 220 }}
+    />
+  </div>
+)}
 
       <Footer/>
     </div>
