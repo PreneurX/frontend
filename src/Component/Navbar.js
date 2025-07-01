@@ -8,7 +8,7 @@ function Navbar() {
   const location = useLocation();
 
   const onLoginClick = () => navigate("/login");
-  const onBackClick = () => navigate(-1); // 👈 back to previous page
+  const onBackClick = () => navigate("/"); // 👈 back to previous page
 
   const isLoginPage = location.pathname === "/login";
 
