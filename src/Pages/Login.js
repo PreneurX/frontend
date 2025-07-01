@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../Context/Context";
+import Loading from "../Component/Loading"; // adjust path if needed
+
 
 
 const LoginPage = () => {
@@ -8,10 +10,12 @@ const LoginPage = () => {
   const [dob, setDob] = useState("");
   const navigate = useNavigate();
    const { login } = useAuth();
+   const [loading, setLoading] = useState(false);
+
 
 const handleSubmit = async (e) => {
- 
   e.preventDefault();
+  setLoading(true);
 
   try {
     const res = await fetch("https://backend-gpe5.onrender.com/api/login", {
@@ -21,8 +25,9 @@ const handleSubmit = async (e) => {
     });
 
     const data = await res.json();
+
     if (res.ok) {
-      login(data.token, data.user, data.role);  
+      login(data.token, data.user, data.role);
       if (data.role === "student") {
         navigate("/dashboard");
       } else if (data.role === "teacher") {
@@ -30,12 +35,18 @@ const handleSubmit = async (e) => {
       }
     } else {
       alert(data.message || "Login failed");
+      setLoading(false); // Stop loader on failure
     }
   } catch (err) {
     console.error("Login error:", err);
     alert("Server error");
+    setLoading(false);
   }
 };
+
+
+if (loading) return <Loading />;
+
 
 
 
