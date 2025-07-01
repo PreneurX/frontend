@@ -44,10 +44,11 @@
   .nav-links {
     display: flex;
     gap: 20px;
+
   }
   
   .nav-links a {
-    font-family: 'Plus Jakarta Sans', Arial;
+    font-family: 'Plus jakarta sans', Arial;
 
     
     color: #515151;
