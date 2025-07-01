@@ -23,6 +23,7 @@ function Finale() {
   const [loading, setLoading] = useState(true);
   const [votingOpen, setVotingOpen] = useState(false);
   const [userVotes, setUserVotes] = useState({ votePostId: null, superVotePostId: null });
+const [showLottie, setShowLottie] = useState(false);
 
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
@@ -61,41 +62,47 @@ const [postsRes, roundRes, voteRes] = await Promise.all([
   }, [user]);
 
   const vote = async (postId, type) => {
-    if (userVotes.votePostId === postId && type === 'super-vote') {
-      return alert("You can't super vote the same post you voted for.");
-    }
-    if (userVotes.superVotePostId === postId && type === 'vote') {
-      return alert("You can't vote the same post you super voted for.");
-    }
+  if (userVotes.votePostId === postId && type === 'super-vote') {
+    return alert("You can't super vote the same post you voted for.");
+  }
+  if (userVotes.superVotePostId === postId && type === 'vote') {
+    return alert("You can't vote the same post you super voted for.");
+  }
 
-    try {
-      await axios.post(`https://backend-gpe5.onrender.com/api/student/${type}`, {
-        postId,
-        studentId: user._id,
-        round: 3
-      });
+  try {
+    setShowLottie(true); // show animation
 
-      setPosts(prev =>
-        prev.map(p =>
-          p._id === postId
-            ? {
+    await axios.post(`https://backend-gpe5.onrender.com/api/student/${type}`, {
+      postId,
+      studentId: user._id,
+      round: 3
+    });
+
+    setPosts(prev =>
+      prev.map(p =>
+        p._id === postId
+          ? {
               ...p,
               voteCount: type === "vote" ? p.voteCount + 1 : p.voteCount,
               superVoteCount: type === "super-vote" ? p.superVoteCount + 1 : p.superVoteCount,
             }
-            : p
-        )
-      );
+          : p
+      )
+    );
 
-      setUserVotes(prev => ({
-        ...prev,
-        votePostId: type === "vote" ? postId : prev.votePostId,
-        superVotePostId: type === "super-vote" ? postId : prev.superVotePostId,
-      }));
-    } catch (err) {
-      alert("Error casting vote");
-    }
-  };
+    setUserVotes(prev => ({
+      ...prev,
+      votePostId: type === "vote" ? postId : prev.votePostId,
+      superVotePostId: type === "super-vote" ? postId : prev.superVotePostId,
+    }));
+
+    setTimeout(() => setShowLottie(false), 1000); // hide animation after 1 sec
+  } catch (err) {
+    alert("Error casting vote");
+    setShowLottie(false); // hide animation if error
+  }
+};
+
 
   const toggleEntry = (id) => {
     setExpandedEntries(prev => ({ ...prev, [id]: !prev[id] }));
@@ -350,6 +357,30 @@ fontVariantCaps: 'petite-caps'
           })}
         </div>
       </main>
+
+      {showLottie && (
+  <div style={{
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    width: '100vw',
+    height: '100vh',
+    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    zIndex: 9999,
+  }}>
+    <DotLottieReact
+      src="https://lottie.host/80f10271-575c-481f-9cc9-03a57d8ee395/1To76lViNr.lottie"
+      autoplay
+      loop={false}
+      speed={1}
+      style={{ width: 220, height: 220 }}
+    />
+  </div>
+)}
+
       <Footer/>
     </div>
   );
