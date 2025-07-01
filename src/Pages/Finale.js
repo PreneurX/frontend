@@ -244,6 +244,8 @@ fontVariantCaps: 'petite-caps'
     marginRight: 5,
     padding: '6px 12px',
     border: 'none',
+    marginTop: 8,
+
     borderRadius: 5,
     fontWeight: 600,
     cursor:
