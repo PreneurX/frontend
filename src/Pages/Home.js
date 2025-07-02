@@ -7,6 +7,8 @@ import TeenDabba from '../Component/TeenDabba';
 import Footer from '../Component/Footer';
 import Rules from '../Component/Rules';
 import PrizePool from '../Component/PrizePool';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+
 
 function Home() {
   return (
