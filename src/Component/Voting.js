@@ -144,16 +144,20 @@ function Voting() {
 
   return (
     <div style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', background: '#f5f8fa', color: '#333', margin: 0 }}>
-      {showLottie && (
-        <div style={{
-          position: 'fixed',
-          top: 0, left: 0, right: 0, bottom: 0,
-          backgroundColor: 'rgba(255,255,255,0.9)',
-          zIndex: 9999,
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center'
-        }}>
+     {showLottie && (
+  <div style={{
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    width: '100vw',
+    height: '100vh',
+    backgroundColor: 'rgba(255,255,255,0.9)',
+    zIndex: 99999,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    overflow: 'hidden',
+  }}>
           <DotLottieReact
             src="https://lottie.host/80f10271-575c-481f-9cc9-03a57d8ee395/1To76lViNr.lottie"
             loop={false}
