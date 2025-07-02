@@ -25,7 +25,7 @@ function TeenDabba() {
             <h3>Big Dream, Small Entry</h3>
             <p>
               Compete For <strong>₹50000+</strong> <br />
-              At Just <strong>₹49</strong>
+              At Just <strong>₹49 &nbsp; <s>₹199</s></strong>
             </p>
           </div>
 
