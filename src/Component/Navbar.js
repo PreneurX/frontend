@@ -23,7 +23,7 @@ function Navbar() {
       <nav className="nav-links">
         <Link to="/">Home</Link>
         <a
-          href="https://drive.google.com/uc?export=download&id=1AsLMl2fZvA2qurMzAg2ZH7OC0zjK5rIv"
+          href="https://drive.google.com/file/d/1wFJ5jqvZjnMd2tYpCHWb8ptMYGy-RqSQ/view?usp=drive_link"
           target="_blank"
           rel="noopener noreferrer"
           download
