@@ -86,7 +86,7 @@ const PrizePool = () => {
 
 <button
   onClick={() => {
-    window.open("https://drive.google.com/uc?export=download&id=1AsLMl2fZvA2qurMzAg2ZH7OC0zjK5rIv", "_blank");
+    window.open("https://drive.google.com/file/d/1wFJ5jqvZjnMd2tYpCHWb8ptMYGy-RqSQ/view?usp=drive_link", "_blank");
   }}
   className="bg-[#083ca0] text-white font-semibold px-4 py-2 rounded-lg hover:bg-black hover:text-white transition-all duration-300 mt-2 mb-4"
 >
