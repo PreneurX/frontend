@@ -1,7 +1,6 @@
 import React from "react";
 import mukundImg from '../assets/mukund.jpeg';
 
-
 const teamMembers = [
   
   {
