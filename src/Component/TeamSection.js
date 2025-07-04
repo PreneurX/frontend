@@ -1,29 +1,32 @@
 import React from "react";
+import mukundImg from '../assets/mukund.jpeg';
+
 
 const teamMembers = [
+  
   {
-    name: "Mukund Madhav",
-    role: "Founder & CEO",
-    image: "/images/mukund.jpg", // Replace with your image path
-    bio: "Visionary behind PreneurX, leading the mission to empower students through innovation and talent-based opportunities."
-  },
-  {
-    name: "Ananya Sharma",
-    role: "Creative Director",
-    image: "/images/ananya.jpg",
-    bio: "Crafts compelling experiences and visuals that bring Gen Z engagement to life."
-  },
-  {
-    name: "Rohan Verma",
-    role: "Tech Head",
-    image: "/images/rohan.jpg",
+    name: "Piyush Kumar Mishra",
+    role: "Co-Founder & CTO",
+    image: "/",
     bio: "Engineer behind the platform's backbone. Makes sure every student interaction is smooth and scalable."
   },
   {
-    name: "Sanya Gupta",
-    role: "Marketing Lead",
-    image: "/images/sanya.jpg",
-    bio: "Connects PreneurX with thousands of students across India through brilliant campaigns and school outreach."
+    name: "Aditya Raj",
+    role: "Co-Founder & CFO",
+    image: "/",
+    bio: "Leads financial strategy and ensures sustainable growth at PreneurX. Balances innovation with responsibility, managing budgets that fuel impactful student experiences."
+  },
+  {
+    name: "Yashveer Shukla",
+    role: "Co-Founder & CMO",
+    image: "/",
+    bio: "Connects PreneurX with thousands of students across India through brilliant communication skills and school outreach."
+  },
+  {
+    name: "Mukund Madhav Tiwari",
+    role: "Founder & CEO",
+    image: mukundImg, // Replace with your image path
+    bio: "Visionary behind PreneurX, leading the mission to empower students through innovation and talent-based opportunities."
   }
 ];
 
