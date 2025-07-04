@@ -12,7 +12,7 @@ function TeenDabba() {
             <div className="icon">
               <img src={book} alt="School Icon" />
             </div>
-            <h3>Top 5 Schools</h3>
+            <h3>Express Your Thought</h3>
             <p>
               The Ultimate Showdown Of <strong>School Stars</strong>
             </p>
@@ -24,8 +24,8 @@ function TeenDabba() {
             </div>
             <h3>Big Dream, Small Entry</h3>
             <p>
-              Compete For <strong>₹50000+</strong> <br />
-              At Just <strong>₹49 &nbsp; <s>₹199</s></strong>
+              Compete Among Your <strong>Classmates</strong> <br />
+              At Just <strong>₹99 &nbsp; <s>₹199</s></strong>
             </p>
           </div>
 
@@ -33,10 +33,10 @@ function TeenDabba() {
             <div className="icon">
               <img src={rupee} alt="Rupees" />
             </div>
-            <h3>Victory At Every Level</h3>
-            <p><strong>60</strong> Class Winners</p>
-            <p><strong>50</strong> Inter School Battle Winners</p>
-            <p>Total <strong>110</strong> Reasons To Celebrate</p>
+            <h3>Beyond Language, Beyond Limits</h3>
+            
+            <p>Empowering <strong>Every Student</strong> to Share Their Thoughts Freely <br/>Write In Any Language</p>
+           
           </div>
         </div>
       </div>
