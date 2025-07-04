@@ -22,7 +22,7 @@ function Navbar() {
 
       <nav className="nav-links">
         <Link to="/">Home</Link>
-                <Link to="/aboutus">Our Mission</Link>
+                <Link to="/about">Our Mission</Link>
 
         <Link to="/rule">Rules</Link>
         <Link to="/contact">Contact Us</Link>
