@@ -11,12 +11,7 @@ function Curousel() {
                 
                 <div className="carousel-option"><Link to="/">Home</Link></div>
                 <div className="carousel-option">
-                <a href="https://drive.google.com/file/d/1wFJ5jqvZjnMd2tYpCHWb8ptMYGy-RqSQ/view?usp=drive_link"
-                target="_blank"
-                rel="noopener noreferrer"
-  >
-                Prize Pool
-               </a>
+                
             </div>
                 <div className="carousel-option"><Link to="/rule">Rules</Link></div>
                 
