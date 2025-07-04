@@ -81,7 +81,7 @@ How To Participate?          </h2>
             2) Examples may include:</p>
             <p>🔹 Step 2: Create Your Entry</p>
             <p>1)You can write upto 500 words.<br/>2) Feel free to be as original and bold as you want — we’re looking for your authentic voice.</p>
-            <p>🔹 Step 3: Submit via the Website</p>
+            <p>🔹 Step 3: Post via the Website</p>
             <p>🔹 Step 4: Get Noticed & Voted</p>
             <p>1) After submission, your entry will be reviewed and published on the platform.<br/>
                 2) Other students and teachers will view, support, and vote for their favourite entries.
