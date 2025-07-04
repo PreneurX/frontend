@@ -23,20 +23,12 @@ const Rules = () => {
             General Rules
           </h2>
           <ul className="list-disc pl-6 space-y-2">
+            
             <li>
-              Participation is limited to students from the top five schools in
-              the district, as determined by our organizing committee.
-            </li>
-            <li>
-              <strong>Two categories:</strong>
-              <ol className="list-decimal pl-6">
-                <li>
-                  <strong>JUNIOR BLAZERS</strong> (Classes 7-8)
-                </li>
-                <li>
-                  <strong>SENIOR CHAMPIONS</strong> (Classes 9-10)
-                </li>
-              </ol>
+Calling All Trailblazers from Class 7 to 10!<br/>
+Step up. Show up. Stand out.<br/>
+One platform. Separate competitions for each class.<br/>
+Your class. Your stage. Your moment to shine.              
             </li>
             <li>
               All participants are required to register through their schools
@@ -44,16 +36,14 @@ const Rules = () => {
               administration.
             </li>
             <li>
-              All participants can vote for contestants in all rounds,
-              including the final.
-            </li>
+All registered participants are eligible to cast one vote and one super vote for their favourite contestants.            </li>
             <li>Participants cannot vote for themselves at any stage.</li>
             <li>
-              Each <strong>Super Vote</strong> = <strong>5 regular Votes</strong>.
-            </li>
+                 A <strong>Super Vote</strong> isn’t just a vote — it’s a game-changer which is equal to <strong>5 regular votes</strong>
+                , it can dramatically shift the leaderboard and spotlight true talent.            </li>
             <li>
-              All participants receive a <strong>Certificate of Participation</strong> and a detailed performance report.
-            </li>
+                  Every participant will be awarded a <strong>Certificate of Participation </strong>
+                  and a personalized performance report showcasing their total votes and overall impact in the competition.            </li>
             <li>Inappropriate content leads to disqualification.</li>
           </ul>
         </section>
