@@ -51,7 +51,7 @@ All registered participants are eligible to cast one vote and one super vote for
         {/* Voting Rules */}
         <section className="bg-white text-black p-6 sm:p-8 rounded-2xl shadow-lg">
           <h2 className="text-2xl font-bold text-[#083ca0] mb-4 border-l-4 border-[#083ca0] pl-3">
-            Voting Rules
+            Voting Rules (Round-wise)
           </h2>
           <div className="space-y-6">
             <div>
@@ -72,6 +72,23 @@ All registered participants are eligible to cast one vote and one super vote for
             </div>
         </section>
 
+        <section className="bg-white text-black p-6 sm:p-8 rounded-2xl shadow-lg">
+          <h2 className="text-2xl font-bold text-[#083ca0] mb-4 border-l-4 border-[#083ca0] pl-3">
+How To Participate?          </h2>
+          <ul className="list-disc pl-6 space-y-2">
+            <p>🔹 Step 1: Choose Your Topic</p>
+            <p>1) We’ll give you 5 exciting topics to choose from — topics that matter to your generation!<br/>
+            2) Examples may include:</p>
+            <p>🔹 Step 2: Create Your Entry</p>
+            <p>1)You can write upto 500 words.<br/>2) Feel free to be as original and bold as you want — we’re looking for your authentic voice.</p>
+            <p>🔹 Step 3: Submit via the Website</p>
+            <p>🔹 Step 4: Get Noticed & Voted</p>
+            <p>1) After submission, your entry will be reviewed and published on the platform.<br/>
+                2) Other students and teachers will view, support, and vote for their favourite entries.
+                </p>
+          </ul>
+        </section>
+
         {/* Disqualification Terms */}
         <section className="bg-white text-black p-6 sm:p-8 rounded-2xl shadow-lg">
           <h2 className="text-2xl font-bold text-[#083ca0] mb-4 border-l-4 border-[#083ca0] pl-3">
@@ -83,6 +100,8 @@ All registered participants are eligible to cast one vote and one super vote for
             <li>Organizers reserve right to disqualify on valid grounds.</li>
           </ul>
         </section>
+
+        
       </main>
     </div>
   );
