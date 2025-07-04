@@ -40,7 +40,6 @@ const Privacy = () => {
         <h2>4. Sharing of Information</h2>
         <p>We may share your information only in the following limited circumstances:</p>
         <ul>
-          <li>With <strong>service providers</strong> who help us operate and maintain our platform under strict confidentiality.</li>
           <li>When <strong>required by law</strong> or to protect our legal rights, safety, or property.</li>
         </ul>
         <p>We do <strong>not</strong> sell your data.</p>
