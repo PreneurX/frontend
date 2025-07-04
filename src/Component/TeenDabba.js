@@ -2,7 +2,7 @@ import React from 'react';
 import "./TeenDabba.css";
 import book from "../assets/book.png";
 import trophy from "../assets/trophy.png";
-import rupee from "../assets/rupees.png";
+import brain from "../assets/brain.png"
 function TeenDabba() {
   return (
     <div>
@@ -10,7 +10,7 @@ function TeenDabba() {
         <div className="cards-container">
           <div className="card">
             <div className="icon">
-              <img src={book} alt="School Icon" />
+              <img src={brain} alt="Brain" />
             </div>
             <h3>Express Your Thought</h3>
             <p>
@@ -20,7 +20,7 @@ function TeenDabba() {
 
           <div className="card">
             <div className="icon">
-              <img src={trophy} alt="Trophy" />
+              <img src={trophy} alt="Trophy"  />
             </div>
             <h3>Big Dream, Small Entry</h3>
             <p>
@@ -30,7 +30,7 @@ function TeenDabba() {
 
           <div className="card">
             <div className="icon">
-              <img src={rupee} alt="Rupees" />
+              <img src={book} alt="book"  />
             </div>
             <h3>Beyond Language, Beyond Limits</h3>
             
