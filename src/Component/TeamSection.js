@@ -32,10 +32,11 @@ const teamMembers = [
 
 const TeamSection = () => {
   return (
+    
 <section id="team" className="bg-white py-12 px-4 md:px-16">
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#083ca0] mb-2">Meet the Team</h2>
-        <p className="text-gray-600">The people behind PreneurX’s vision, tech, and creativity.</p>
+        <h2 className="text-3xl fontFamily:'Plus Jakarta Sans' md:text-4xl font-bold text-[#083ca0] mb-2">Meet the Team</h2>
+        <p className="text-gray-600 fontFamily:'Plus Jakarta Sans'">The people behind PreneurX’s vision, tech, and creativity.</p>
       </div>
       <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {teamMembers.map((member, index) => (
@@ -46,12 +47,12 @@ const TeamSection = () => {
             <img
               src={member.image}
               alt={member.name}
-              className="w-full h-60 object-cover"
+              className="w-32 h-32 object-cover rounded-full mx-auto mt-6"
             />
             <div className="p-5 text-center">
-              <h3 className="text-xl font-semibold text-[#083ca0]">{member.name}</h3>
-              <p className="text-sm text-gray-500 mb-2">{member.role}</p>
-              <p className="text-sm text-gray-700">{member.bio}</p>
+              <h3 className="text-xl font-semibold text-[#083ca0] fontFamily:'Plus Jakarta Sans'">{member.name}</h3>
+              <p className="text-sm text-gray-500 mb-2 fontFamily:'Plus Jakarta Sans'">{member.role}</p>
+              <p className="text-sm text-gray-700 fontFamily:'Plus Jakarta Sans'">{member.bio}</p>
             </div>
           </div>
         ))}
