@@ -129,6 +129,11 @@ const ContactUs = () => {
                   className="h-8 w-8 hover:scale-105 transition-transform mt-2"
                 />
               </a>
+              <p className="mt-2 text-sm text-[#333] leading-relaxed"><strong>WhatsApp Support:</strong>
+We typically respond within 2 to 5 minutes.<br/>
+Available Monday to Saturday, from 9:00 AM to 5:00 PM
+
+</p>
             </div>
           </div>
         </div>
