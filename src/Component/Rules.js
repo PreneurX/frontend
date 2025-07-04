@@ -51,7 +51,7 @@ All registered participants are eligible to cast one vote and one super vote for
         {/* Voting Rules */}
         <section className="bg-white text-black p-6 sm:p-8 rounded-2xl shadow-lg">
           <h2 className="text-2xl font-bold text-[#083ca0] mb-4 border-l-4 border-[#083ca0] pl-3">
-            Voting Rules (Round-wise)
+            Voting Rules
           </h2>
           <div className="space-y-6">
             <div>
