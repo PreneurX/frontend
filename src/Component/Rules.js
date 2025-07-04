@@ -56,37 +56,20 @@ All registered participants are eligible to cast one vote and one super vote for
           <div className="space-y-6">
             <div>
               <h3 className="text-xl font-semibold text-[#083ca0] mb-2">
-                🌀 Round 1 – Class Clash
+                🌀 Class Clash
               </h3>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Students vote within their own class.</li>
-                <li>1 vote + 1 super vote per student.</li>
+                <li>Students vote within their own class to their favourite classmates.</li>
+                <li>1 vote + 1 super vote per student.( 1 super vote = 5 normal votes.)</li>
                 <li>Teachers get 5 votes (1 per student).</li>
-                <li>Top 50% from each class proceed to Round 2.</li>
-              </ul>
+                 <li>Winners will be determined based on the number of votes received. 
+                    A leaderboard will be displayed after the competition, and each student will receive a detailed analysis of their performance.</li>                   
+                    <li>Everyone gets Certificate of Participation.</li>
+                    <li>Students will have two days to vote for their favourite contestant.</li>
+                    <li>Winners will be featured on our website and official Deoria’s Instagram handle along with school name (1Lakh+Followers)</li>
+                 </ul>
             </div>
-            <div>
-              <h3 className="text-xl font-semibold text-[#083ca0] mb-2">
-                🏫 Round 2 – School Showdown
-              </h3>
-              <ul className="list-disc pl-6 space-y-2">
-                <li>Top 50% from each class move to school-level round.</li>
-                <li>Same voting rules apply as Round 1.</li>
-                <li>Top 20 from each category in each school qualify for Finale.</li>
-              </ul>
             </div>
-            <div>
-              <h3 className="text-xl font-semibold text-[#083ca0] mb-2">
-                🏆 Round 3 – The Grand Finale
-              </h3>
-              <ul className="list-disc pl-6 space-y-2">
-                <li>100 students (20 per school from 5 schools) compete.</li>
-                <li>Voting is open to all schools.</li>
-                <li>Students & teachers can vote for any finalist.</li>
-                <li>Top 3 crowned as “The Ultimate Talent Star 2025”.</li>
-              </ul>
-            </div>
-          </div>
         </section>
 
         {/* Disqualification Terms */}
