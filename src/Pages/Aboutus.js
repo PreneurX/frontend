@@ -111,8 +111,13 @@ const AboutUs = () => {
 
         <h2 style={styles.h2}>Our Mission</h2>
         <p style={styles.p}>
-          At PreneurX, we aim to inspire, educate, and elevate students by providing engaging competitions, learning resources, and mentorship programs that nurture creativity, leadership, and innovation. Whether it’s through exciting events like the <strong>PreneurX Talent Clash</strong> or by building a supportive community, we are here to make a difference.
-        </p>
+At PreneurX, we aim to inspire, educate, and elevate students by providing engaging competitions, learning resources, and mentorship programs that nurture creativity, leadership, and innovation. Whether it’s through exciting events like the PreneurX Talent Clash or by building a supportive community, we are here to make a difference.
+
+Looking ahead, our vision is to establish a one-of-a-kind school that blends academics with real-world skills, creativity, and entrepreneurship from an early age. We believe in reimagining education beyond textbooks—focusing on practical learning, student expression, and innovation.
+
+In the near future, we also plan to launch inter-school competitions, bringing together young talent from across the country to collaborate, compete, and grow together on a larger stage.
+
+PreneurX is not just a platform—it's a movement to shape the leaders of tomorrow.        </p>
 
         <h2 style={styles.h2}>The Team Behind PreneurX</h2>
         <p style={styles.p}>
