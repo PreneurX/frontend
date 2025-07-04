@@ -10,6 +10,8 @@ function Curousel() {
             <div className="mobile-carousel">
                 
                 <div className="carousel-option"><Link to="/">Home</Link></div>
+              <div className="carousel-option"><Link to="/aboutus">Our Mission</Link></div>
+
                 <div className="carousel-option"><Link to="/rule">Rules</Link></div>                
                 <div className="carousel-option"><Link to="/contact">Contact Us</Link></div>
                 <div className="carousel-option"><Link to="/">Team</Link></div>
