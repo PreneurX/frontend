@@ -25,6 +25,7 @@ import SchoolShowdown from './Pages/SchoolShowdown';
 import Rule from './Pages/Rule';
 import ContactUs from './Pages/Contact';
 import CrownKeepers from './Pages/CrownKeepers';
+import TeamPage from './Pages/TeamPage';
 
 
 
@@ -105,6 +106,7 @@ function App() {
 
 
 
+<Route path="/team" element={<TeamPage />} />
 
 
 
