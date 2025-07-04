@@ -29,7 +29,7 @@ const teamMembers = [
   {
     name: "Mukund Madhav Tiwari",
     role: "Founder & CEO",
-    image: mukundImg, // Replace with your image path
+    image: "/", // Replace with your image path
     bio: "Visionary behind PreneurX, leading the mission to empower students through innovation and talent-based opportunities."
   }
 ];
