@@ -6,7 +6,6 @@ import Marquee from '../Component/Marquee';
 import TeenDabba from '../Component/TeenDabba';
 import Footer from '../Component/Footer';
 import Rules from '../Component/Rules';
-import PrizePool from '../Component/PrizePool';
 
 
 function Home() {
@@ -17,8 +16,7 @@ function Home() {
         <Display/>
        
         <TeenDabba/>
-        <PrizePool/>
-        <br />
+                <br />
         <Rules/>
         <br />
 
