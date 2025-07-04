@@ -42,9 +42,7 @@ function Terms() {
         <h2>3. Awards and Rewards</h2>
         <ul>
           <li>Students may be eligible for multiple awards based on their performance or votes.</li>
-          <li>
-            If a student qualifies for two rewards, only the <strong>larger reward will be awarded</strong>.
-          </li>
+          
           <li>
             The final decision regarding rewards lies solely with the PreneurX team, and it is binding.
           </li>
