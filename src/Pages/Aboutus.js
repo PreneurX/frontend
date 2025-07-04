@@ -116,7 +116,7 @@ const AboutUs = () => {
 
         <h2 style={styles.h2}>The Team Behind PreneurX</h2>
         <p style={styles.p}>
-          Our team brings together some of the brightest minds from premier institutions like <strong>IITs, NITs, SIT, VIT, LPU, and more</strong>. This diverse and talented group of educators, technologists, designers, and creators works tirelessly to ensure the best possible experience for students across the country.
+          Our team brings together some of the brightest minds from premier institutions like <strong>IITs, NITs, SIT, VIT, LPU, and more</strong>. This diverse and talented group of technologists, designers, and creators works tirelessly to ensure the best possible experience for students across the country.
         </p>
 
         <h2 style={styles.h2}>What We Offer</h2>
