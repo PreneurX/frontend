@@ -40,9 +40,7 @@ function Terms() {
         </ul>
 
         <h2>3. Awards and Rewards</h2>
-        <ul>
-          <li>Students may be eligible for multiple awards based on their performance or votes.</li>
-          
+        <ul>          
           <li>
             The final decision regarding rewards lies solely with the PreneurX team, and it is binding.
           </li>
