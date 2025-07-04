@@ -22,14 +22,7 @@ function Navbar() {
 
       <nav className="nav-links">
         <Link to="/">Home</Link>
-        <a
-          href="https://drive.google.com/file/d/1wFJ5jqvZjnMd2tYpCHWb8ptMYGy-RqSQ/view?usp=drive_link"
-          target="_blank"
-          rel="noopener noreferrer"
-          download
-        >
-          Prize Pool
-        </a>
+        
         <Link to="/rule">Rules</Link>
         <Link to="/contact">Contact Us</Link>
       </nav>
