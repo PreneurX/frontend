@@ -17,12 +17,7 @@ const teamMembers = [
     image: mukund, // Replace with your image path
     bio: "Visionary behind PreneurX, leading the mission to empower students through innovation and talent-based opportunities."
   },
-  {
-    name: "Piyush Kumar Mishra",
-    role: "Co-Founder & CTO",
-    image: piyush,
-    bio: "Engineer behind the platform's backbone. Makes sure every student interaction is smooth and scalable."
-  },
+ 
   {
     name: "Aditya Raj",
     role: "Co-Founder & CFO",
@@ -34,6 +29,12 @@ const teamMembers = [
     role: "Co-Founder & CMO",
     image: "/",
     bio: "Connects PreneurX with thousands of students across India through brilliant communication skills and school outreach."
+  },
+ {
+    name: "Piyush Kumar Mishra",
+    role: "Co-Founder & CTO",
+    image: piyush,
+    bio: "Engineer behind the platform's backbone. Makes sure every student interaction is smooth and scalable."
   }
   
 ];
