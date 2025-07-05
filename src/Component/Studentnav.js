@@ -37,7 +37,7 @@ function Studentnav() {
           <Link to="/classclash">Class Clash</Link>
 
           
-          <Link to="">Leaderboard</Link>
+          <Link to="/lead">Leaderboard</Link>
                     <Link to="/rule">Rules</Link>
         </div>
       </div>
