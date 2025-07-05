@@ -45,15 +45,16 @@ const TeamSection = () => {
   
   <>
         <Navbar/>
+<h1
+    className="text-3xl md:text-4xl font-bold"
+    style={{ fontFamily: "Plus Jakarta Sans", margin: 0 }}
+  >
+    Meet the Team
+  </h1>
+</div>
+<div className="text-center mb-3 mt-3 font-bold">
+        
 
-    <section id="team" className="bg-white pb-12 px-4 md:px-16">
-      <div className="text-center mb-12">
-        <h2
-          className="text-3xl md:text-4xl font-bold text-[#083ca0] mb-2"
-          style={{ fontFamily: "Plus Jakarta Sans" }}
-        >
-          Meet the Team
-        </h2>
         <p
           className="text-gray-600"
           style={{ fontFamily: "Plus Jakarta Sans" }}
@@ -61,6 +62,10 @@ const TeamSection = () => {
           The people behind PreneurX’s vision, tech, and creativity.
         </p>
       </div>
+
+
+    <section id="team" className="bg-white pb-12 px-4 md:px-16">
+      
       <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {teamMembers.map((member, index) => (
           <div
