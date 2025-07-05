@@ -56,7 +56,7 @@ const TeamSection = () => {
 >
   <h1
     className="text-3xl md:text-4xl font-bold"
-    style={{ fontFamily: "Plus Jakarta Sans", margin: 0 }}
+    style={{ fontFamily: "Plus Jakarta Sans", margin: 0,fontSize:"30px" }}
   >
     Meet the Team
   </h1>
