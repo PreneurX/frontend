@@ -1,6 +1,7 @@
 import React from "react";
 import mukund from '../assets/mukund.jpg';
 import piyush from '../assets/piyush.jpg';
+import aditya from '../assets/aditya.jpg';
 
 import Footer from '../Component/Footer';
 import Navbar from '../Component/Navbar';
@@ -21,7 +22,7 @@ const teamMembers = [
   {
     name: "Aditya Raj",
     role: "Co-Founder & CFO",
-    image: "/",
+    image: aditya,
     bio: "Leads financial strategy and ensures sustainable growth at PreneurX. Balances innovation with responsibility, managing budgets that fuel impactful student experiences."
   },
   {
