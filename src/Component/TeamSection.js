@@ -1,5 +1,4 @@
 import React from "react";
-import mukund from '../assets/mukund.jpg';
 import piyush from '../assets/piyush.jpg';
 import aditya from '../assets/aditya.jpg';
 import mukundmadhav from '../assets/mukundmadhav.jpg';
