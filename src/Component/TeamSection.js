@@ -2,6 +2,7 @@ import React from "react";
 import mukund from '../assets/mukund.jpg';
 import piyush from '../assets/piyush.jpg';
 import aditya from '../assets/aditya.jpg';
+import mukundmadhav from '../assets/mukundmadhav.jpg';
 
 import Footer from '../Component/Footer';
 import Navbar from '../Component/Navbar';
@@ -15,7 +16,7 @@ const teamMembers = [
   {
     name: "Mukund Madhav Tiwari",
     role: "Founder & CEO",
-    image: mukund, // Replace with your image path
+    image: mukundmadhav, // Replace with your image path
     bio: "Visionary behind PreneurX, leading the mission to empower students through innovation and talent-based opportunities."
   },
   
