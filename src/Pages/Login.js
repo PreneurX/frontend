@@ -5,7 +5,6 @@ import Loading from "../Component/Loading";
 import Footer from "../Component/Footer"; // Import Footer here
 import Navbar from "../Component/Navbar"; // ✅ adjust the path if needed
 
-
 const LoginPage = () => {
   const [mobile, setMobile] = useState("");
   const [dob, setDob] = useState("");
@@ -48,7 +47,7 @@ const LoginPage = () => {
 
   return (
     <div style={styles.page}>
-          <Navbar /> {/* ✅ Navbar at top */}
+      <Navbar /> {/* ✅ Navbar at top */}
 
       <div style={styles.container}>
         <div style={styles.card}>
@@ -76,8 +75,22 @@ const LoginPage = () => {
               Login
             </button>
           </form>
+
+          {/* Help section below form */}
+          <div style={styles.helpSection}>
+            <p style={styles.helpText}>Need help logging in?</p>
+            <a
+              href="https://wa.me/message/DYGTA4MBTTQQA1"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={styles.whatsappButton}
+            >
+              Chat on WhatsApp
+            </a>
+          </div>
         </div>
       </div>
+
       <Footer />
     </div>
   );
@@ -90,7 +103,7 @@ const styles = {
     flexDirection: "column",
     justifyContent: "space-between",
   },
-    container: {
+  container: {
     backgroundColor: "#f4f6fa",
     flex: 1,
     display: "flex",
@@ -98,7 +111,6 @@ const styles = {
     alignItems: "center",
     padding: "40px 0 40px", // ⬅️ Top padding for sticky navbar
   },
-
   card: {
     backgroundColor: "#fff",
     padding: "40px",
@@ -135,9 +147,29 @@ const styles = {
     marginBottom: "20px",
     fontSize: "16px",
   },
+  helpSection: {
+    marginTop: "20px",
+    textAlign: "center",
+  },
+  helpText: {
+    fontSize: "14px",
+    color: "#515151",
+    marginBottom: "8px",
+  },
+  whatsappButton: {
+    display: "inline-block",
+    backgroundColor: "#238636",
+    color: "white",
+    padding: "6px 10px",
+    borderRadius: "8px",
+    textDecoration: "none",
+    fontWeight: "bold",
+    fontFamily:"Plus Jakarta Sans",
+    fontSize:"14px",
+  },
   button: {
     backgroundColor: "#083CA0",
-    color: "#fff",
+    color: "white",
     padding: "12px",
     border: "none",
     borderRadius: "8px",
