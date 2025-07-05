@@ -1,5 +1,7 @@
 import React from "react";
 import mukund from '../assets/mukund.jpg';
+import piyush from '../assets/piyush.jpg';
+
 import Footer from '../Component/Footer';
 import Navbar from '../Component/Navbar';
 
@@ -18,7 +20,7 @@ const teamMembers = [
   {
     name: "Piyush Kumar Mishra",
     role: "Co-Founder & CTO",
-    image: "/",
+    image: piyush,
     bio: "Engineer behind the platform's backbone. Makes sure every student interaction is smooth and scalable."
   },
   {
