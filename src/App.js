@@ -26,6 +26,7 @@ import Rule from './Pages/Rule';
 import ContactUs from './Pages/Contact';
 import CrownKeepers from './Pages/CrownKeepers';
 import TeamPage from './Pages/TeamPage';
+import Leaders from './Component/Leaders';
 
 
 
@@ -77,6 +78,11 @@ function App() {
         <Route path="/finale" element={
           <PrivateStudentRoute>
             <Finale />
+          </PrivateStudentRoute>
+        } />
+          <Route path="/lead" element={
+          <PrivateStudentRoute>
+            <Leaders />
           </PrivateStudentRoute>
         } />
         <Route path="/rule" element={<Rule />} />
