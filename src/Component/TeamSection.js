@@ -1,5 +1,5 @@
 import React from "react";
-/*import mukundImg from '../assets/mukund.jpeg';*/
+import mukund from '../assets/mukund.jpg';
 import Footer from '../Component/Footer';
 import Navbar from '../Component/Navbar';
 
@@ -8,6 +8,13 @@ import Navbar from '../Component/Navbar';
 
 const teamMembers = [
   
+  
+  {
+    name: "Mukund Madhav Tiwari",
+    role: "Founder & CEO",
+    image: mukund, // Replace with your image path
+    bio: "Visionary behind PreneurX, leading the mission to empower students through innovation and talent-based opportunities."
+  },
   {
     name: "Piyush Kumar Mishra",
     role: "Co-Founder & CTO",
@@ -25,13 +32,8 @@ const teamMembers = [
     role: "Co-Founder & CMO",
     image: "/",
     bio: "Connects PreneurX with thousands of students across India through brilliant communication skills and school outreach."
-  },
-  {
-    name: "Mukund Madhav Tiwari",
-    role: "Founder & CEO",
-    image: "/", // Replace with your image path
-    bio: "Visionary behind PreneurX, leading the mission to empower students through innovation and talent-based opportunities."
   }
+  
 ];
 
 const TeamSection = () => {
