@@ -18,7 +18,7 @@ const teamMembers = [
     image: mukund, // Replace with your image path
     bio: "Visionary behind PreneurX, leading the mission to empower students through innovation and talent-based opportunities."
   },
- 
+  
   {
     name: "Aditya Raj",
     role: "Co-Founder & CFO",
@@ -31,7 +31,7 @@ const teamMembers = [
     image: "/",
     bio: "Connects PreneurX with thousands of students across India through brilliant communication skills and school outreach."
   },
- {
+{
     name: "Piyush Kumar Mishra",
     role: "Co-Founder & CTO",
     image: piyush,
@@ -45,7 +45,16 @@ const TeamSection = () => {
   
   <>
         <Navbar/>
-<h1
+        <div
+  className="w-full"
+  style={{
+    background: "linear-gradient(135deg, #083ca0, black)",
+    color: "#fff",
+    padding: "12px 0px", // adjust as needed
+    textAlign: "center",
+  }}
+>
+  <h1
     className="text-3xl md:text-4xl font-bold"
     style={{ fontFamily: "Plus Jakarta Sans", margin: 0 }}
   >
