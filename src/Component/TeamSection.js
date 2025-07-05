@@ -1,7 +1,7 @@
 import React from "react";
 import piyush from '../assets/piyush.jpg';
 import aditya from '../assets/aditya.jpg';
-import mukundmadhav from '../assets/mukund.jpg';
+import mukund from '../assets/mukund.jpg';
 
 import Footer from '../Component/Footer';
 import Navbar from '../Component/Navbar';
