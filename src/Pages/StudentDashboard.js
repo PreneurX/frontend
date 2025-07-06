@@ -10,6 +10,11 @@ function StudentDashboard() {
   const [student, setStudent] = useState(null);
   // const fileInputRef = useRef(null);
 
+const getWordCount = (text) => {
+  return text.trim().split(/\s+/).filter(Boolean).length;
+};
+
+
 const student1 = JSON.parse(localStorage.getItem("studentUser"));
 const studentId = student1?._id;console.log(studentId);
   const styles = {
@@ -120,27 +125,33 @@ const studentId = student1?._id;console.log(studentId);
   }, [studentId]);
 
   const handlePostSubmit = async () => {
-    if (!post.trim()) return;
+  const wordCount = getWordCount(post);
+  if (!post.trim()) return;
 
-    try {
-      const res = await fetch("https://backend-gpe5.onrender.com/api/student/post", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ studentId, content: post.trim() }),
-      });
+  if (wordCount > 500) {
+    alert("Post must be under 500 words.");
+    return;
+  }
 
-      // const data = await res.json();
-      if (res.ok) {
-        setPosted(post.trim());
-        setPost('');
-      } else {
-        alert("Failed to save post");
-      }
-    } catch (err) {
-      console.error("Error saving post", err);
-      alert("Server error");
+  try {
+    const res = await fetch("https://backend-gpe5.onrender.com/api/student/post", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ studentId, content: post.trim() }),
+    });
+
+    if (res.ok) {
+      setPosted(post.trim());
+      setPost('');
+    } else {
+      alert("Failed to save post");
     }
-  };
+  } catch (err) {
+    console.error("Error saving post", err);
+    alert("Server error");
+  }
+};
+
 
   return (
     <>
@@ -167,6 +178,11 @@ const studentId = student1?._id;console.log(studentId);
   value={post}
   onChange={(e) => setPost(e.target.value)}
 />
+
+<p style={{ fontSize: '14px', color: getWordCount(post) > 500 ? 'red' : '#555' }}>
+  Word Count: {getWordCount(post)} / 500
+</p>
+
 
             <button style={styles.button} onClick={handlePostSubmit}>
               Post
