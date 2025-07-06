@@ -2,13 +2,20 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useAuth } from '../Context/Context';
 import Studentnav from '../Component/Studentnav';
-import Loading from '../Component/Loading';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 function Leaders() {
   const { user } = useAuth();
   const [leaders, setLeaders] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [showIntro, setShowIntro] = useState(true);
 
+  // Show intro animation for 2.5 seconds
+  useEffect(() => {
+    const introTimer = setTimeout(() => setShowIntro(false), 2500);
+    return () => clearTimeout(introTimer);
+  }, []);
+
+  // Fetch leaderboard data
   useEffect(() => {
     if (!user || !user.school || !user.classLevel) return;
 
@@ -30,7 +37,6 @@ function Leaders() {
           .sort((a, b) => b.finalScore - a.finalScore);
 
         setLeaders(sorted);
-        setLoading(false);
       } catch (err) {
         console.error('Error loading leaderboard:', err);
       }
@@ -39,15 +45,30 @@ function Leaders() {
     fetchLeaderboard();
   }, [user]);
 
-  if (loading) return <Loading />;
+  // Intro animation screen
+  if (showIntro) {
+    return (
+      <div className="flex items-center justify-center h-screen w-screen bg-white">
+        <DotLottieReact
+          src="https://lottie.host/b25189ae-745f-401c-a6c5-75e436286ed5/v5pI0B234z.lottie"
+          autoplay
+          loop={false}
+          style={{
+            width: '100%',
+            height: '100%',
+            maxWidth: '500px',
+            maxHeight: '500px',
+          }}
+        />
+      </div>
+    );
+  }
 
+  // Leaderboard table
   return (
     <>
       <Studentnav />
-      <div className="max-w-4xl mx-auto px-4 py-6">
-        <h1 className="text-2xl font-bold text-center mb-6 bg-gradient-to-r from-[#083ca0] to-black bg-clip-text text-transparent">
-          📊 Class Clash Leaderboard
-        </h1>
+      <div className="max-w-4xl mx-auto px-4 py-6 animate-fade-in">
         <table className="w-full border rounded-lg overflow-hidden shadow">
           <thead className="bg-[#083ca0] text-white">
             <tr>
@@ -61,18 +82,40 @@ function Leaders() {
           <tbody className="bg-white">
             {leaders.map((student, index) => (
               <tr key={student.id} className="text-center border-t">
-                <td className="p-2 font-semibold">{index + 1}</td>
-                <td className="p-2 flex items-center justify-center gap-2">
-                  <img
-                    src={student.profilePic}
-                    alt={student.name}
-                    className="w-8 h-8 rounded-full object-cover"
-                  />
-                  <span>{student.name}</span>
+                {/* Rank Column */}
+                <td className="font-semibold">
+                  {index === 0 ? (
+                    <div className="w-[60px] h-[60px] mx-auto">
+                      <DotLottieReact
+                        src="https://lottie.host/cf9b31db-07ba-47c3-8bb7-13401b6544da/LUXIsc5vYU.lottie"
+                        autoplay
+                        loop
+                        style={{ width: '100%', height: '100%' }}
+                      />
+                    </div>
+                  ) : (
+                    index + 1
+                  )}
                 </td>
+
+                {/* Name + Profile */}
+                <td className="p-2 flex items-center justify-center gap-2">
+                  <div className="flex items-center gap-2">
+                    <img
+                      src={student.profilePic}
+                      alt={student.name}
+                      className="w-8 h-8 rounded-full object-cover"
+                    />
+                    <span>{student.name}</span>
+                  </div>
+                </td>
+
+                {/* Votes */}
                 <td className="p-2">{student.votes}</td>
                 <td className="p-2">{student.superVotes}</td>
-                <td className="p-2 font-bold text-[#083ca0]">{student.finalScore}</td>
+                <td className="p-2 font-bold text-[#083ca0]">
+                  {student.finalScore}
+                </td>
               </tr>
             ))}
           </tbody>
