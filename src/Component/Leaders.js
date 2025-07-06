@@ -93,6 +93,10 @@ function Leaders() {
                         style={{ width: '100%', height: '100%' }}
                       />
                     </div>
+                  ) : index === 1 ? (
+<span className="text-2xl">🥈</span>
+                  ) : index === 2 ? (
+<span className="text-2xl">🥉</span>
                   ) : (
                     index + 1
                   )}
