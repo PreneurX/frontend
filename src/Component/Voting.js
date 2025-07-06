@@ -212,7 +212,7 @@ function Voting() {
           <Link to="/classclash">Class Clash</Link>
 
           
-          <Link to="/lead">Leaderboard</Link>
+          <Link to="/leaderboard">Leaderboard</Link>
                     <Link to="/rule">Rules</Link>
 
         </div>
