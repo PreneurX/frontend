@@ -80,7 +80,7 @@ function App() {
             <Finale />
           </PrivateStudentRoute>
         } />
-          <Route path="/lead" element={
+          <Route path="/leaderboard" element={
           <PrivateStudentRoute>
             <Leaders />
           </PrivateStudentRoute>
