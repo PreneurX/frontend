@@ -99,9 +99,22 @@ function Voting() {
   };
 
   const maxLength = 150;
-  const filteredStudents = posts.filter(student =>
+  const filteredStudents = (() => {
+  // 1. Filter by search term
+  const filtered = posts.filter(student =>
     student.studentId.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  // 2. Separate user's post
+  const userPost = filtered.find(p => p._id === myPostId);
+  const otherPosts = filtered
+    .filter(p => p._id !== myPostId)
+    .sort((a, b) => a.studentId.name.localeCompare(b.studentId.name)); // sort alphabetically
+
+  // 3. Put user's post at the top (if exists)
+  return userPost ? [userPost, ...otherPosts] : otherPosts;
+})();
+
 
   if (loading) return <p><Loading /></p>;
 
