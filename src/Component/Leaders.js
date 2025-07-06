@@ -50,9 +50,9 @@ function Leaders() {
     return (
       <div className="flex items-center justify-center h-screen w-screen bg-white">
         <DotLottieReact
-          src="https://lottie.host/b25189ae-745f-401c-a6c5-75e436286ed5/v5pI0B234z.lottie"
+          src="https://lottie.host/e382ba8e-e4cf-4b69-95a5-19cc072edd4c/lkNxjwfPRz.lottie"
           autoplay
-          loop={false}
+          loop
           style={{
             width: '100%',
             height: '100%',
