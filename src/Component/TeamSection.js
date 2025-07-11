@@ -25,12 +25,6 @@ const teamMembers = [
     image: aditya,
     bio: "Leads financial strategy and ensures sustainable growth at PreneurX. Balances innovation with responsibility, managing budgets that fuel impactful student experiences."
   },
-  {
-    name: "Yashveer Shukla",
-    role: "Co-Founder & CMO",
-    image: "/",
-    bio: "Connects PreneurX with thousands of students across India through brilliant communication skills and school outreach."
-  },
 {
     name: "Piyush Kumar Mishra",
     role: "Co-Founder & CTO",
