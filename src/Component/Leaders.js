@@ -9,13 +9,11 @@ function Leaders() {
   const [leaders, setLeaders] = useState([]);
   const [showIntro, setShowIntro] = useState(true);
 
-  // Show intro animation for 2.5 seconds
   useEffect(() => {
     const introTimer = setTimeout(() => setShowIntro(false), 2500);
     return () => clearTimeout(introTimer);
   }, []);
 
-  // Fetch leaderboard data
   useEffect(() => {
     if (!user || !user.school || !user.classLevel) return;
 
@@ -45,7 +43,6 @@ function Leaders() {
     fetchLeaderboard();
   }, [user]);
 
-  // Intro animation screen
   if (showIntro) {
     return (
       <div className="flex items-center justify-center h-screen w-screen bg-white">
@@ -64,7 +61,6 @@ function Leaders() {
     );
   }
 
-  // Leaderboard table
   return (
     <>
       <Studentnav />
@@ -74,15 +70,12 @@ function Leaders() {
             <tr>
               <th className="p-2">Rank</th>
               <th className="p-2">Name</th>
-              <th className="p-2">Votes</th>
-              <th className="p-2">Super Votes</th>
               <th className="p-2">Final Points</th>
             </tr>
           </thead>
           <tbody className="bg-white">
             {leaders.map((student, index) => (
               <tr key={student.id} className="text-center border-t">
-                {/* Rank Column */}
                 <td className="font-semibold">
                   {index === 0 ? (
                     <div className="w-[60px] h-[60px] mx-auto">
@@ -94,15 +87,13 @@ function Leaders() {
                       />
                     </div>
                   ) : index === 1 ? (
-<span className="text-2xl">🥈</span>
+                    <span className="text-2xl">🥈</span>
                   ) : index === 2 ? (
-<span className="text-2xl">🥉</span>
+                    <span className="text-2xl">🥉</span>
                   ) : (
                     index + 1
                   )}
                 </td>
-
-                {/* Name + Profile */}
                 <td className="p-2 flex items-center justify-center gap-2">
                   <div className="flex items-center gap-2">
                     <img
@@ -113,10 +104,6 @@ function Leaders() {
                     <span>{student.name}</span>
                   </div>
                 </td>
-
-                {/* Votes */}
-                <td className="p-2">{student.votes}</td>
-                <td className="p-2">{student.superVotes}</td>
                 <td className="p-2 font-bold text-[#083ca0]">
                   {student.finalScore}
                 </td>
@@ -124,6 +111,60 @@ function Leaders() {
             ))}
           </tbody>
         </table>
+
+        {/* ✅ PERFORMANCE REPORT SECTION WITH LOTTIE */}
+        {user && leaders.length > 0 && (() => {
+          const currentUser = leaders.find(l => l.name === user.name);
+          const currentIndex = leaders.findIndex(l => l.name === user.name);
+          const nextRank = currentIndex > 0 ? leaders[currentIndex - 1] : null;
+          const pointsBehind = nextRank ? nextRank.finalScore - currentUser.finalScore : 0;
+
+          return (
+            <div className="mt-8 p-4 border rounded shadow bg-[#f7f9fc] flex justify-between items-start gap-4">
+              {/* Text Part */}
+              <div className="flex-1">
+                <h2 className="text-lg font-semibold text-[#083ca0] mb-3">Your Performance Summary</h2>
+                <p><strong>Your Final Rank:</strong> {currentIndex + 1}</p>
+                <p><strong>Total Points Scored:</strong> {currentUser.finalScore}</p>
+                <p><strong>Total Votes Received:</strong> {currentUser.votes}</p>
+                <p><strong>Total Super Votes:</strong> {currentUser.superVotes}</p>
+
+                {nextRank && (
+  <p className="mt-2 text-sm text-gray-700">
+    You were just <strong>{pointsBehind + 1}</strong> point{pointsBehind + 1 > 1 ? 's' : ''} behind <strong>{nextRank.name}</strong>.
+  </p>
+)}
+
+
+                {currentIndex > 2 && (
+                  <p className="text-sm text-yellow-600 mt-1">
+                    You were just {currentIndex - 2} rank{currentIndex - 2 > 1 ? 's' : ''} away from the Top 3.
+                  </p>
+                )}
+
+                {currentIndex === 0 && (
+                  <p className="text-green-600 font-semibold mt-1">🔥 You were the Top Performer!</p>
+                )}
+
+                {currentIndex <= 2 && (
+                  <p className="mt-2 text-[#083ca0] font-semibold">
+                    🏆 Congratulations! You will receive a <strong>Certificate of Excellence</strong>.
+                  </p>
+                )}
+              </div>
+
+              {/* Lottie Part */}
+              <div className="w-40 h-40">
+                <DotLottieReact
+                  src="https://lottie.host/b992b11c-72c1-4c34-9732-5b47e4179118/9LAhmUbPeK.lottie"
+                  autoplay
+                  loop
+                  style={{ width: '100%', height: '100%',marginTop:100 }}
+                />
+              </div>
+            </div>
+          );
+        })()}
       </div>
     </>
   );
