@@ -7,10 +7,34 @@ function StudentDashboard() {
   const [post, setPost] = useState('');
   const [posted, setPosted] = useState('');
   const [profilePic, setProfilePic] = useState('');
+
   const [student, setStudent] = useState(null);
   // const fileInputRef = useRef(null);
 
-const getWordCount = (text) => {
+    const [openGroup, setOpenGroup] = useState(null);
+
+  const juniorTopics = [
+    "If I Had a Superpower to Help People,what would your power be and how would you use it?",
+    "A Startup Idea That Can Help India Grow,what’s the idea, and how can it make an impact?",
+    "Please tell us about the most impressive thing you have built or achieved.",
+    "How Technology is Changing the Way We Learn, Think about online classes, learning apps, and AI tools.",
+    "If I Built a City Only for Kids, what would it be like? What rules would you make?"
+  ];
+
+  const seniorTopics = [
+    "Your team is losing because one person forgot their part.Do you blame, support, or take charge?",
+    "My Favourite Scientist and What I Learned from Them, who is your inspiration and what did they discover?",
+    "Artificial Intelligence – A Friend or a Threat?What is AI? Where is it used? What are its pros and cons?",
+    "A Startup Idea That Can Help India Grow, What’s the idea, and how can it make an impact?",
+    "Please tell us about the most impressive thing you have built or achieved."
+  ];
+
+  const toggleGroup = (group) => {
+    setOpenGroup(openGroup === group ? null : group);
+  };
+
+
+  const getWordCount = (text) => {
   return text.trim().split(/\s+/).filter(Boolean).length;
 };
 
@@ -158,6 +182,10 @@ const studentId = student1?._id;console.log(studentId);
     <div style={styles.body}>
       <Studentnav />
 
+
+      
+
+
       <div style={styles.container}>
         <div style={styles.profileHeader}>
           <img src={profilePic || "https://img.freepik.com/premium-vector/profile-picture-placeholder-avatar-silhouette-gray-tones-icon-colored-shapes-gradient_1076610-40164.jpg?semt=ais_hybrid&w=740"} alt="Profile" style={styles.profileImage} />
@@ -179,9 +207,11 @@ const studentId = student1?._id;console.log(studentId);
   onChange={(e) => setPost(e.target.value)}
 />
 
+
 <p style={{ fontSize: '14px', color: getWordCount(post) > 500 ? 'red' : '#555' }}>
   Word Count: {getWordCount(post)} / 500
 </p>
+
 
 
             <button style={styles.button} onClick={handlePostSubmit}>
@@ -221,6 +251,80 @@ const studentId = student1?._id;console.log(studentId);
            <div style={{ display: 'flex', flexDirection: 'column', minHeight: '58vh' }}>
   <main style={{ flex: 1 }}>
     {/* Your page content here */}
+
+
+    <div style={{ maxWidth: '600px', margin: '20px auto' }}>
+  <button
+    onClick={() => toggleGroup("junior")}
+   style={{
+  width: '100%',
+  background: 'linear-gradient(to right, black, #083ca0)',
+  color: 'white',
+  padding: '10px 16px',
+  border: 'none',
+  borderRadius: '40px',
+  fontWeight: 'bold',
+  fontSize: '16px',
+  cursor: 'pointer'
+}}
+
+  >
+    Topics for Class 6, 7 and 8
+  </button>
+
+  <div style={{
+    maxHeight: openGroup === "junior" ? '1000px' : '0',
+    overflow: 'hidden',
+    transition: 'max-height 0.4s ease',
+    background: 'white',
+    fontFamily:'Plus Jakarta Sans',
+    lineHeight:'1.5',
+    borderRadius: '6px',
+    padding: openGroup === "junior" ? '10px' : '0'
+  }}>
+    <ul style={{ margin: 0, padding: 0, listStyle: 'disc', paddingLeft: '20px' }}>
+      {juniorTopics.map((topic, idx) => (
+        <li key={idx} style={{ marginBottom: '8px' }}>{topic}</li>
+      ))}
+    </ul>
+  </div>
+
+  <button
+    onClick={() => toggleGroup("senior")}
+    style={{
+  width: '100%',
+  background: 'linear-gradient(to right, #083ca0,black)',
+  color: 'white',
+  padding: '10px 16px',
+  border: 'none',
+  borderRadius: '40px',
+  marginTop:'5px',
+  fontWeight: 'bold',
+  fontSize: '16px',
+  cursor: 'pointer'
+}}
+
+  >
+    Topics for Class 9, 10, 11 and 12
+  </button>
+
+  <div style={{
+    maxHeight: openGroup === "senior" ? '1000px' : '0',
+    overflow: 'hidden',
+    fontFamily:'Plus Jakarta Sans',
+    lineHeight:'1.5',
+    transition: 'max-height 0.4s ease',
+    background: 'white',
+    borderRadius: '6px',
+    padding: openGroup === "senior" ? '10px' : '0'
+  }}>
+    <ul style={{ margin: 0, padding: 0, listStyle: 'disc', paddingLeft: '20px' }}>
+      {seniorTopics.map((topic, idx) => (
+        <li key={idx} style={{ marginBottom: '8px' }}>{topic}</li>
+      ))}
+    </ul>
+  </div>
+</div>
   </main>
 
   <footer style={{
