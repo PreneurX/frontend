@@ -235,9 +235,9 @@ function Voting() {
 
       <main style={{ maxWidth: 1000, margin: '0 auto', padding: 0 }}>
         <h1 style={{ textAlign: 'center', lineHeight: '1.1', fontSize: '1.8rem', paddingTop:10, fontWeight: 700, background: 'linear-gradient(to right, #083ca0, black)', WebkitBackgroundClip: 'text', color: 'transparent' }}>
-          ROUND-1<br />Class Clash
+        CLASS CLASH
         </h1>
-        <p style={{ textAlign: 'center', fontSize: '1rem', marginBottom: 16 }}>Vote for your favorite classmate!<br /> Top 50% advance to the next round.<br /> <strong>You cannot change your vote once it has been cast.</strong></p>
+        <p style={{ textAlign: 'center', fontSize: '1rem', marginBottom: 16 }}>Vote for your favorite classmate!<br /> <strong>You cannot change your vote once it has been cast.</strong></p>
 
         <div style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', margin: '10px', gap: '20px' }}>
           {filteredStudents.map(post => {
