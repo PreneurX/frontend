@@ -78,7 +78,7 @@ const LoginPage = () => {
 
           {/* Help section below form */}
           <div style={styles.helpSection}>
-            <p style={styles.helpText}>Need help logging in?</p>
+            <p style={styles.helpText}>Need help logging in?<br/>You will be able to log in once your registration has been completed through your school.</p>
             <a
               href="https://wa.me/message/DYGTA4MBTTQQA1"
               target="_blank"
